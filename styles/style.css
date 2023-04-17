@@ -4,4 +4,48 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+}
+header #banner{
+    background: #FFE29F url('../assets/banner.png');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 220px;
+}
+nav{
+    width: 100%;
+    background-color: #373D55;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+nav ul li{
+    padding: 10px;
+}
+nav ul li a{
+    color: #FFE29F;
+    font-weight: 400;
+    padding: 3px;
+}
+nav ul li a:hover{
+    color: #FFF;
+}
+.active-tab{
+    border-bottom: 2px solid #FFE29F;
+}
+.active-tab:hover{
+    border-bottom: 2px solid #FFF;
 }
