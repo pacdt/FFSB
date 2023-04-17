@@ -19,10 +19,10 @@ header{
 }
 header #banner{
     background: #FFE29F url('../assets/banner.png');
-    background-size: 90%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 220px;
+    height: 240px;
 }
 nav{
     width: 100%;
@@ -38,14 +38,50 @@ nav ul li{
 nav ul li a{
     color: #FFE29F;
     font-weight: 400;
-    padding: 3px;
 }
 nav ul li a:hover{
     color: #FFF;
 }
 .active-tab{
-    border-bottom: 2px solid #FFE29F;
+    color: #fff
 }
 .active-tab:hover{
-    border-bottom: 2px solid #FFF;
+    cursor: not-allowed;
+}
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #FFE29F;
+    padding: 30px;
+}
+footer h2{
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+footer h5{
+    font-size: 1rem;
+}
+footer #fale-conosco{
+    display: flex;
+    flex-direction: column;
+}
+#credits{
+    background-color: #373D55;
+    color: #FFF;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+#credits h6{
+    font-size: .9rem;
+    font-weight: 200;
+}
+#credits a{
+    color: #FFE29F;
 }
