@@ -5,6 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    overflow-x: hidden;
 }
 
 body{
@@ -14,7 +15,6 @@ body{
 header{
     display: flex;
     flex-direction: column;
-    
     width: 100%;
 }
 header #banner{
@@ -49,6 +49,51 @@ nav ul li a:hover{
     cursor: not-allowed;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+}
+main section{
+    height: 500px;
+    width: 80%;
+    background-color: #373D55;
+    padding: 30px;
+    display: flex;
+}
+h2{
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+main section #cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+}
+.artigo-card{
+    width: 300px;
+    height: 150px;
+    color: #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+main article{
+    width: 20%;
+    height: 500px;
+    background-color: #d62b33;
+}
+
+
+
+
+
+
 
 footer{
     display: flex;
@@ -70,6 +115,16 @@ footer h5{
 footer #fale-conosco{
     display: flex;
     flex-direction: column;
+}
+footer #footer-logo img{
+    /* width: 15%; */
+    max-width: 180px;
+}
+footer #whats{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #credits{
     background-color: #373D55;

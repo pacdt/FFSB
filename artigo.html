@@ -19,7 +19,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a class="active-tab" href="index.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">Quem Somos</a></li>
 					<li><a href="historico.html">Histórico</a></li>
 					<li><a href="baluartes.html">Baluartes</a></li>
@@ -31,22 +31,30 @@
 
 		<main>
 			<section>
-				<h2>Artigos</h2>
-				<div id="cards">
-					<div
-						class="artigo-card"
-						style="
-							background: url('https://1.bp.blogspot.com/-8OQzFjg3f_I/Xlkc2KwsVGI/AAAAAAAAvDQ/9NkdIKcmXVsrKPscXAWnwryqHuLVl7n3gCKgBGAsYHg/s1600/download%2B%25281%2529.jpeg');
-						"
-						onclick="verArtigo(1)">
-						<h3>O que é Oração?</h3>
-					</div>
-				</div>
+				<h2 id="titulo"></h2>
+				<p id="conteudo"></p>
+				<img id="imagem" src="" alt="" />
 			</section>
-			<!-- <article>
-
-            </article> -->
 		</main>
+		<script>
+			// Recupera o ID do artigo da URL
+			var urlParams = new URLSearchParams(window.location.search);
+			var id = urlParams.get("id");
+
+			// Carrega os dados do arquivo JSON
+			fetch("artigos.json")
+				.then((response) => response.json())
+				.then((data) => {
+					// Encontra o artigo correspondente com base no ID
+					var artigo = data.find((a) => a.id == id);
+
+					// Exibe os dados do artigo na página
+					document.getElementById("titulo").textContent =
+						artigo.titulo;
+					document.getElementById("conteudo").innerHTML =
+						artigo.conteudo;
+				});
+		</script>
 
 		<footer>
 			<div id="fale-conosco">
