@@ -61,6 +61,7 @@ main section{
     background-color: #373D55;
     padding: 30px;
     display: flex;
+    flex-direction: column;
 }
 h2{
     font-weight: 400;
@@ -82,6 +83,9 @@ main section #cards{
     align-items: flex-end;
     padding: 15px;
     font-size: 1.5rem;
+}
+.artigo-card:hover{
+    cursor: pointer;
 }
 main article{
     width: 20%;
