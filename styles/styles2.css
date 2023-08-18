@@ -190,3 +190,164 @@ footer{
 .whatsapp-logo{
     width: 30px;
 }
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1200px){
+    body{
+        background-color: aqua;
+    }
+    #options ul{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1080px){
+    body{
+        background-color: red;
+    }
+    #section-title hr{
+        width: 70%;
+    }
+    #section-title{
+        gap: 15px;
+    }
+    #infos{
+        width: 100%;
+        gap: 20px;
+        padding: 40px;
+    }
+}
+@media screen and (max-width: 978px){
+    body{
+        background-color: green;
+    }
+    #section-title hr{
+        width: 80%;
+    }
+    #section-title{
+        gap: 10px;
+    }
+    .banner-img{
+        width: 90vw;
+    }
+    #cards{
+        width: 90%;
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 854px){
+    body{
+        background-color: yellow;
+    }
+    header{
+        width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+    }
+    nav ul{
+        width: 85%;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-top: 10px;
+        gap: 20px;
+    }
+    #artigos{
+        margin-top: 50px;
+    }
+    #options{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    #options ul{
+        width: 80%;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    #options ul li img{
+        height: 50px;
+    }
+    #section-title{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #section-title h2{
+        font-weight: 400;
+    }
+    #section-title hr{
+        display: none;
+    }
+
+    #cards{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 100px;
+        padding: 0px;
+    }
+
+    
+    #credits{
+        text-align: center;
+    }
+
+    footer{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        background-color: #FFE29F;;
+    }
+    #infos{
+        width: 100%;
+        gap: 10px;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+    }
+    #infos h4{
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    #infos h5{
+        font-weight: 400;
+        font-size: 16px;
+    }
+    #infos a{
+        color: #373D55;
+        text-decoration: none;
+    }
+    #infos a:hover{
+        color: #FFF;
+    }
+    .logo-footer{
+        width: 180px;
+        height: 200px;
+        border-right: 0px solid #fff;
+    }
+    .whatsapp-logo{
+        width: 30px;
+    }
+}
+/* 
+@media screen and (max-width: 1080px){
+    body{
+        background-color: red;
+    }
+} */
