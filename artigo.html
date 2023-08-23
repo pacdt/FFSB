@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./styles/style.css" />
+		<link rel="stylesheet" href="./styles/styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -14,12 +14,13 @@
 	</head>
 	<body>
 		<header>
-			<div id="banner">
-				<!-- <img src="./assets/banner.png" alt="Banner Filhos e Filhas de São Bento do Coração Eucarístico de Jesus" /> -->
-			</div>
+			<img
+				class="banner"
+				src="./assets/logo.png"
+				alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus" />
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a class="active-tab" href="index.html">Home</a></li>
 					<li><a href="about.html">Quem Somos</a></li>
 					<li><a href="historico.html">Histórico</a></li>
 					<li><a href="baluartes.html">Baluartes</a></li>
@@ -33,9 +34,10 @@
 			<section>
 				<h2 id="titulo"></h2>
 				<p id="conteudo"></p>
-				<img id="imagem" src="" alt="" />
+				<img id="imagem" src="" alt="" width="200px"/>
 			</section>
 		</main>
+		
 		<script>
 			// Recupera o ID do artigo da URL
 			var urlParams = new URLSearchParams(window.location.search);
@@ -53,34 +55,45 @@
 						artigo.titulo;
 					document.getElementById("conteudo").innerHTML =
 						artigo.conteudo;
+
+					document.getElementById("imagem").src =
+						artigo.imagem;
 				});
 		</script>
 
 		<footer>
-			<div id="fale-conosco">
-				<h2>Para Mais Informações:</h2>
-				<h5>
-					<a href="tel:79998789509">(79) 99878-9509</a> <br />
+			<div id="infos">
+				<img class="logo-footer" src="./assets/logo.png" alt="Logo" />
+				<div>
+					<br />
+					<h4>
+						Filhos e Filhas de São Bento do Coração Eucarístico de
+						Jesus
+					</h4>
+					<p>Abade: <strong>Irmão Francisco</strong></p>
 					<a href="tel:79981314532">(79) 98131-4532</a>
-				</h5>
+					<br />
+					<a href="tel:79998789509">(79) 99878-9509</a>
+					<br />
+					<br />
+					<address>
+						Rua Juscelino de Jesus Gama, Pov. Cabrita, 494, São
+						Cristóvão - SE, 49100-000
+					</address>
+					<br />
+					<h5>Entre em Contato via WhatsApp</h5>
+					<a
+						href="https://api.whatsapp.com/send?phone=5579998789509&text=Ol%C3%A1%20Filhos%20de%20S%C3%A3o%20Bento!%20Gostaria%20de%20mais%20inorma%C3%A7%C3%B5es">
+						<img
+							class="whatsapp-logo"
+							src="./assets/whatsapp.png"
+							alt="WhatsApp Logo" />
+					</a>
+				</div>
 			</div>
-			<div id="footer-logo">
-				<img
-					src="./assets/logo.png"
-					alt="Brasão dos Filhos e Filhas de São Bento do Coração Eucarístico de Jesus" />
-			</div>
-			<div id="whats">
-				<h2>Entre em Contato via WhatsApp</h2>
-
-				<a
-					href="https://api.whatsapp.com/send?phone=5579998789509&text=Ol%C3%A1%20Filhos%20de%20S%C3%A3o%20Bento!%20Gostaria%20de%20mais%20inorma%C3%A7%C3%B5es">
-					<img
-						src="./assets/whatsapp.png"
-						alt="WhatsApp Logo"
-						width="50px" />
-				</a>
-			</div>
+			<div></div>
 		</footer>
+
 		<div id="credits">
 			<h6>
 				Todos os Direitos Reservados para os

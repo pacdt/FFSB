@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    margin-bottom: 50px;
+}
+main{
+    width: 100vw;
+    display: flex;
+    margin-bottom: 50px;
+}
+#liturgia{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+#primeiraLeitura, #segundaLeitura, #salmo, #evangelho{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.txt-titulo{
+    color: red;
+}
