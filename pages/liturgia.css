@@ -19,7 +19,7 @@ main{
     align-items: center;
     gap: 15px;
 }
-#primeiraLeitura, #segundaLeitura, #salmo, #evangelho{
+#primeiraLeitura, #segundaLeitura, #segLeitura, #salmo, #evangelho{
     width: 80%;
     display: flex;
     flex-direction: column;
