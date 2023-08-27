@@ -188,6 +188,10 @@ footer {
 #local{
 	width: 100vw;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
 }
 #local section {
 	width: 100%;
@@ -197,6 +201,10 @@ footer {
 	align-items: center;
 	justify-content: center;
 	padding: 30px;
+}
+#local h4 a{
+	color: #373d55;
+	text-decoration: none;
 }
 
 /* RESPONSIVIDADE */
