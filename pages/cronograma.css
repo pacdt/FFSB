@@ -1,0 +1,10 @@
+
+body{
+    width: 100vw;
+}
+#cronograma{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
