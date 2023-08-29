@@ -1,183 +1,175 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="../styles/styles.css" />
+		<link rel="stylesheet" href="liturgia.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&display=swap"
-		rel="stylesheet" />
-	<link rel="stylesheet" href="../styles/styles.css" />
-	<link rel="stylesheet" href="liturgia.css" />
+		<title>Liturgia Diária</title>
+	</head>
 
-	<title>Liturgia Diária</title>
-</head>
+	<body>
+		<header>
+			<img
+				class="banner"
+				src="../assets/logo.png"
+				alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus" />
+			<nav>
+				<ul>
+					<li><a class="active-tab" href="../index.html">Home</a></li>
+					<li><a href="../about.html">Quem Somos</a></li>
+					<li><a href="../historico.html">Histórico</a></li>
+					<li><a href="../baluartes.html">Baluartes</a></li>
+					<li><a href="../acoes.html">Ações</a></li>
+					<li><a href="../contato">Contato</a></li>
+				</ul>
+			</nav>
+		</header>
 
-<body>
-	<header>
-		<img class="banner" src="../assets/logo.png"
-			alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus" />
-		<nav>
-			<ul>
-				<li><a class="active-tab" href="../index.html">Home</a></li>
-				<li><a href="../about.html">Quem Somos</a></li>
-				<li><a href="../historico.html">Histórico</a></li>
-				<li><a href="../baluartes.html">Baluartes</a></li>
-				<li><a href="../acoes.html">Ações</a></li>
-				<li><a href="../contato">Contato</a></li>
-			</ul>
-		</nav>
-	</header>
+		<main>
+			<section id="liturgia">
+				<h1>Liturgia Diária</h1>
+				<h3 id="data"></h3>
+				<div id="primeiraLeitura"></div>
+				<div id="segundaLeitura">
+					<div id="segLeitura"></div>
+				</div>
+				<div id="salmo"></div>
+				<div id="evangelho"></div>
+			</section>
+		</main>
 
-	<main>
-		<section id="liturgia">
-			<h1>Liturgia Diária</h1>
-			<h3 id="data"></h3>
+		<script>
+			// Carrega os dados do arquivo JSON
+			fetch("https://liturgia.up.railway.app/")
+				.then((response) => response.json())
+				.then((data) => {
+					// Exibe os dados da liturgia na página
 
-			<div id="primeiraLeitura">
-				<h3>
-					<span id="semana"></span> <span>|</span> Cor:
-					<span id="cor"></span>
-				</h3>
-				<h3 class="txt-titulo">Primeira Leitura</h3>
-				<h3>
-					<span id="titulo"></span> <span id="referencia"></span>
-				</h3>
-				<p id="conteudo"></p>
-			</div>
-			<div id="segundaLeitura">
-				<h3 class="txt-titulo">Segunda Leitura</h3>
-				<div id="segLeitura"></div>
-			</div>
-			<div id="salmo">
-				<h3 class="txt-titulo">Salmo</h3>
-				<h3>
-					<span id="titulo-s"></span>
-					<span id="referencia-s"></span>
-				</h3>
-				<p id="conteudo-s"></p>
-			</div>
-			<div id="evangelho">
-				<h3 class="txt-titulo">Evangelho</h3>
-				<h3>
-					<span id="titulo-e"></span>
-					<span id="referencia-e"></span>
-				</h3>
-				<p id="conteudo-e"></p>
-			</div>
-		</section>
-	</main>
+					document.getElementById("data").textContent = data.data;
+					document.getElementById("primeiraLeitura").innerHTML = `
+					<h3>
+					<span id="semana">${data.liturgia}</span> <span><br></span> Cor:
+					<span id="cor">${data.cor}</span>
+					</h3>
+					<h3 class="txt-titulo">Primeira Leitura</h3>
+					<h3>
+						<span id="titulo">${data.primeiraLeitura.titulo}</span> <span id="referencia">(${data.primeiraLeitura.referencia})</span>
+					</h3>
+					<p id="conteudo">${data.primeiraLeitura.texto}</p>
+					`;
 
-	<script>
-		// Carrega os dados do arquivo JSON
-		fetch("https://liturgia.up.railway.app/")
-			.then((response) => response.json())
-			.then((data) => {
-				// console.log(data);
+					// Alternar cor de acordo com o Tempo
+					let cor = data.cor;
+					if (cor == "Branco") {
+						document.getElementById("cor").style.color = "#fff";
+					}
+					if (cor == "Verde") {
+						document.getElementById("cor").style.color = "#00A652";
+					}
+					if (cor == "Roxo") {
+						document.getElementById("cor").style.color = "#B01CEE";
+					}
+					if (cor == "Vermelho") {
+						document.getElementById("cor").style.color = "#ED1B24";
+					}
+					if (cor == "Rosa") {
+						document.getElementById("cor").style.color = "#F7B8D7";
+					}
 
-				// Exibe os dados da liturgia na página
-				document.getElementById("data").textContent = data.data;
-				document.getElementById("semana").textContent =
-					data.liturgia;
-				document.getElementById("cor").textContent = data.cor;
-				document.getElementById(
-					"referencia"
-				).textContent = `( ${data.primeiraLeitura.referencia} )`;
-
-				document.getElementById("titulo").textContent =
-					data.primeiraLeitura.titulo;
-				document.getElementById("conteudo").innerHTML =
-					data.primeiraLeitura.texto;
-
-				console.log(
-					data.segundaLeitura == "Não há segunda leitura hoje!"
-				);
-
-				if (data.segundaLeitura == "Não há segunda leitura hoje!") {
-					document.getElementById("segLeitura").textContent = `
-						Não há segunda leitura hoje!
+					if (data.segundaLeitura == "Não há segunda leitura hoje!") {
+						document.getElementById("segLeitura").innerHTML = `
+					<h3 class="txt-titulo">Segunda Leitura</h3>
+					<p>Não há segunda leitura hoje!</p>
 						`;
-				} else {
-					document.getElementById("segLeitura").innerHTML = `
+					} else {
+						document.getElementById("segundaLeitura").innerHTML = `
+						<h3 class="txt-titulo">Segunda Leitura</h3>
 						<h3>
 						<span id="titulo2"></span> <span id="referencia2"></span>
 						</h3>
 						<p id="conteudo2"></p>
 
 						`;
-					document.getElementById(
-						"referencia2"
-					).textContent = `( ${data.segundaLeitura.referencia} )`;
+						document.getElementById(
+							"referencia2"
+						).textContent = `( ${data.segundaLeitura.referencia} )`;
+						document.getElementById("titulo2").textContent =
+							data.segundaLeitura.titulo;
+						document.getElementById("conteudo2").innerHTML =
+							data.segundaLeitura.texto;
+					}
 
-					document.getElementById("titulo2").textContent =
-						data.segundaLeitura.titulo;
-					document.getElementById("conteudo2").innerHTML =
-						data.segundaLeitura.texto;
-				}
+					document.getElementById("salmo").innerHTML = `
+				<h3 class="txt-titulo">Salmo</h3>
+				<h3>
+					<span id="titulo-s">${data.salmo.refrao}</span>
+					<span id="referencia-s">(${data.salmo.referencia})</span>
+				</h3>
+				<p id="conteudo-s">${data.salmo.texto}</p>
+				`;
 
-				document.getElementById(
-					"referencia-s"
-				).textContent = `( ${data.salmo.referencia} )`;
+					document.getElementById("evangelho").innerHTML = `
+				<h3 class="txt-titulo">Evangelho</h3>
+					<h3>
+						<span id="titulo-e">${data.evangelho.titulo}</span>
+						<span id="referencia-e">(${data.evangelho.referencia})</span>
+					</h3>
+					<p id="conteudo-e">${data.evangelho.texto}</p>
+				`;
+				});
+		</script>
 
-				document.getElementById("titulo-s").textContent =
-					data.salmo.refrao;
-				document.getElementById("conteudo-s").innerHTML =
-					data.salmo.texto;
-
-				document.getElementById(
-					"referencia-e"
-				).textContent = `( ${data.evangelho.referencia} )`;
-
-				document.getElementById("titulo-e").textContent =
-					data.evangelho.titulo;
-				document.getElementById("conteudo-e").innerHTML =
-					data.evangelho.texto;
-			});
-	</script>
-
-	<footer>
-		<div id="infos">
-			<img class="logo-footer" src="../assets/logo.png" alt="Logo" />
-			<div>
-				<br />
-				<h4>
-					Filhos e Filhas de São Bento do Coração Eucarístico de
-					Jesus
-				</h4>
-				<p>Abade: <strong>Irmão Francisco</strong></p>
-				<a href="tel:79981314532">(79) 98131-4532</a>
-				<br />
-				<a href="tel:79998789509">(79) 99878-9509</a>
-				<br />
-				<br />
-				<address>
-					Rua Juscelino de Jesus Gama, Pov. Cabrita, 494, São
-					Cristóvão - SE, 49100-000
-				</address>
-				<br />
-				<h5>Entre em Contato via WhatsApp</h5>
-				<a
-					href="https://api.whatsapp.com/send?phone=5579998789509&text=Ol%C3%A1%20Filhos%20de%20S%C3%A3o%20Bento!%20Gostaria%20de%20mais%20inorma%C3%A7%C3%B5es">
-					<img class="whatsapp-logo" src="../assets/whatsapp.png" alt="WhatsApp Logo" />
-				</a>
+		<footer>
+			<div id="infos">
+				<img class="logo-footer" src="../assets/logo.png" alt="Logo" />
+				<div>
+					<br />
+					<h4>
+						Filhos e Filhas de São Bento do Coração Eucarístico de
+						Jesus
+					</h4>
+					<p>Abade: <strong>Irmão Francisco</strong></p>
+					<a href="tel:79981314532">(79) 98131-4532</a>
+					<br />
+					<a href="tel:79998789509">(79) 99878-9509</a>
+					<br />
+					<br />
+					<address>
+						Rua Juscelino de Jesus Gama, Pov. Cabrita, 494, São
+						Cristóvão - SE, 49100-000
+					</address>
+					<br />
+					<h5>Entre em Contato via WhatsApp</h5>
+					<a
+						href="https://api.whatsapp.com/send?phone=5579998789509&text=Ol%C3%A1%20Filhos%20de%20S%C3%A3o%20Bento!%20Gostaria%20de%20mais%20inorma%C3%A7%C3%B5es">
+						<img
+							class="whatsapp-logo"
+							src="../assets/whatsapp.png"
+							alt="WhatsApp Logo" />
+					</a>
+				</div>
 			</div>
+			<div></div>
+		</footer>
+
+		<div id="credits">
+			<h6>
+				Todos os Direitos Reservados para os
+				<strong>
+					Filhos e Filhas de São Bento do Coração Eucarístico de Jesus
+				</strong>
+				- Site Criado por
+				<a href="http://devmateus.tech">Mateus Santos</a>
+			</h6>
 		</div>
-		<div></div>
-	</footer>
-
-	<div id="credits">
-		<h6>
-			Todos os Direitos Reservados para os
-			<strong>
-				Filhos e Filhas de São Bento do Coração Eucarístico de Jesus
-			</strong>
-			- Site Criado por
-			<a href="http://devmateus.tech">Mateus Santos</a>
-		</h6>
-	</div>
-	<script src="../js/index.js"></script>
-	<script src="../js/artigos.js"></script>
-</body>
-
+		<script src="../js/index.js"></script>
+		<script src="../js/artigos.js"></script>
+	</body>
 </html>

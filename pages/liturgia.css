@@ -1,32 +1,41 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
-header{
-    margin-bottom: 50px;
+header {
+	margin-bottom: 50px;
 }
-main{
-    width: 100vw;
-    display: flex;
-    margin-bottom: 50px;
+main {
+	width: 100vw;
+	display: flex;
+	margin-bottom: 50px;
 }
-#liturgia{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+#liturgia {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
 }
-#primeiraLeitura, #segundaLeitura, #segLeitura, #salmo, #evangelho{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+#primeiraLeitura,
+#segundaLeitura,
+#segLeitura,
+#salmo,
+#evangelho {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 20px;
 }
-.txt-titulo{
-    color: red;
+.txt-titulo {
+	color: red;
+}
+#cor {
+	color: #000;
+	text-shadow: 1px 1px 1px #000;
 }
