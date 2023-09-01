@@ -1,0 +1,55 @@
+body {
+	width: 100vw;
+}
+#about {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+    /* margin-top: -50px; */
+    text-align: justify;
+}
+h3{
+    font-size: 1.5em;
+}
+.border-img {
+	border: 7px solid #fff;
+	height: 300px;
+}
+#about section {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	align-items: center;
+	justify-content: center;
+}
+figure{
+    text-align: center;
+}
+figcaption {
+	font-size: 0.8em;
+	font-weight: 400;
+    text-align: center;
+}
+hr {
+	width: 100%;
+	margin-top: 15px;
+}
+.txt-red {
+	color: #ff0000;
+}
+@media screen and (max-width: 1080px) {
+    #about section{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 670px) {
+    #about section{
+        width: 90%;
+    }
+    .border-img {
+        height: 200px;
+    }
+}
