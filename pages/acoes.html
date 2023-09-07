@@ -11,11 +11,6 @@
 		<link rel="stylesheet" href="../styles/styles.css" />
 		<link rel="stylesheet" href="quemSomos.css" />
 
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
 		<title>Ações Evangelizadoras</title>
 	</head>
 	<body>
@@ -32,11 +27,9 @@
 						<a href="./historico.html">Histórico</a>
 					</li>
 					<li>
-						<a class="active-tab" href="./baluartes.html"
-							>Baluartes</a
-						>
+						<a href="./baluartes.html">Baluartes</a>
 					</li>
-					<li><a href="./acoes.html">Ações</a></li>
+					<li><a class="active-tab" href="./acoes.html">Ações</a></li>
 					<li><a href="./contato">Contato</a></li>
 				</ul>
 			</nav>
@@ -76,28 +69,37 @@
 					seguir espalhando <em>A paz de Jesus e o Amor de Maria!</em>
 				</p>
 				<br />
-				<div class="single-item">
-					<div>
-						<img
-							src="https://1.bp.blogspot.com/-3ufJaeMtUkQ/WCcSMJlyYZI/AAAAAAAABVc/n4-jyot2S_kErdwLEOUo72ySW7AYLO4YQCLcB/s400/DSC00115.JPG"
-							alt="" />
-					</div>
-					<div>
-						<img
-							src="https://1.bp.blogspot.com/-YXR7t4XRh70/WCcS8SYx4lI/AAAAAAAABVs/E2CjMby2EqopO8x8H5qYRdx4AuPleBnmwCLcB/s200/DSC00131.JPG"
-							alt="" />
-					</div>
-					<div>
-						<img
-							src="https://4.bp.blogspot.com/-my6HqpoJZfA/WCcSNf1KPLI/AAAAAAAABVk/DxZ8pFofkGwHm7RN3T75IANZ6L-cmFzEACLcB/s320/DSC00246.JPG"
-							alt="" />
-					</div>
-					<div>
-						<img
-							src="https://3.bp.blogspot.com/-TQrtqEwBqcM/WCcSgWUZerI/AAAAAAAABVo/GyhZseH9m8kLcNZwNhbi_jeQXSmsxnzQQCLcB/s320/DSC00249.JPG"
-							alt="" />
+				<h3>Fotos de alguns Trabalhos Missionários</h3>
+				<br />
+				<h4>Comunidade de Comunidades</h4>
+				<br />
+				<p>
+					Conforme documento 100 de Aparecida, a comunidade de
+					comunidades é lugar da escuta da Palavra de Deus, é a
+					formação de seus membros para evangelizar, pois, é dinâmica
+					e missionária. Ela é nova no espírito, no ardor e dinâmica
+					no anúncio da Palavra. <br /><br />
+					Segundo nosso querido Papa Francisco: este exercício
+					pastoral da Comunidade mostra o rosto de Mãe da Igreja, que
+					gera, amamenta, faz crescer, corrige, alimenta e conduz pela
+					mão seus filhos, impulsionando-os a evangelizar e
+					testemunhar a alegria do Evangelho.
+				</p>
+				<br />
+				<p class="legenda">
+					(Clique ou toque na imagem para ver outras)
+				</p>
+				<br />
+				<div class="carousel">
+					<div onclick="comunidade()">
+						<img id="imagem" class="border-img" src="" alt="" />
+						<br />
 					</div>
 				</div>
+				<p id="lgd">
+					Igreja em saída, nas ruas com o Povo!
+				</p>
+				<br />
 			</section>
 		</main>
 
@@ -144,24 +146,6 @@
 				<a href="http://devmateus.tech">Mateus Santos</a>
 			</h6>
 		</div>
-		<script
-			src="https://code.jquery.com/jquery-3.7.1.min.js"
-			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-			crossorigin="anonymous"></script>
-
-		<script
-			type="text/javascript"
-			src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script
-			type="text/javascript"
-			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-		<script
-			type="text/javascript"
-			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-		<script type="text/javascript">
-			$(".single-item").slick();
-		</script>
+		<script src="../js/acoes.js"></script>
 	</body>
 </html>

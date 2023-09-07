@@ -50,6 +50,21 @@ hr {
 .txt-red {
 	color: #ff0000;
 }
+#imagem {
+	transition: opacity 0.3s;
+}
+.legenda{
+	font-style: italic;
+	font-size: 0.8em;
+	text-align: center;
+}
+#lgd{
+	font-style: italic;
+	font-size: 1em;
+	text-align: center;
+	font-weight: 700;
+}
+
 @media screen and (max-width: 1080px) {
     #about section{
         width: 80%;
