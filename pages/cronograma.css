@@ -1,6 +1,5 @@
-
-body{
-    width: 100vw;
+body {
+	width: 100vw;
 }
 #cronograma {
 	width: 100%;
@@ -9,37 +8,46 @@ body{
 	justify-content: center;
 	align-items: center;
 	gap: 15px;
-    text-align: justify;
+	text-align: justify;
 }
 #cronograma section {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	gap:20px;
 	align-items: center;
 	justify-content: center;
 }
-#cronograma a{
+#cronograma a {
 	color: #717ca8;
 	text-decoration: none;
 }
-#cronograma a:hover{
+#cronograma a:hover {
 	color: #fff;
 }
-
+h5 {
+	font-weight: 400;
+	font-size: 1.2em;
+}
+.info {
+	font-style: italic;
+	font-size: .9em;
+	color: #ec6516;
+}
 
 @media screen and (max-width: 1080px) {
-    #cronograma section{
-        width: 80%;
-    }
+	#cronograma section {
+		width: 80%;
+	}
 }
 @media screen and (max-width: 670px) {
-    #cronograma section{
-        width: 90%;
-    }
-	#cronograma p{
+	#cronograma section {
+		width: 90%;
+	}
+	#cronograma p {
 		font-size: 0.95em;
 	}
-    .border-img {
-        height: 200px;
-    }
+	.border-img {
+		height: 200px;
+	}
 }
