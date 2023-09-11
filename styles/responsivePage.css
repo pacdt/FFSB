@@ -1,0 +1,92 @@
+body {
+	width: 100vw;
+}
+#bg{
+	width: 100vw;
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: -20px;
+	background-position: center center;
+}
+#about {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+    text-align: justify;
+}
+h3{
+    font-size: 1.5em;
+}
+.ref{
+	text-align: right;
+	font-style: italic;
+}
+.border-img {
+	border: 7px solid #fff;
+	height: 300px;
+}
+#about a{
+	color: #717ca8;
+	text-decoration: none;
+}
+#about a:hover{
+	color: #fff;
+}
+#about section {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	gap: 15px;
+	align-items: center;
+	justify-content: center;
+}
+figure{
+    text-align: center;
+}
+figcaption {
+	font-size: 0.8em;
+	font-weight: 400;
+    text-align: center;
+}
+hr {
+	width: 100%;
+	margin-top: 15px;
+}
+.txt-red {
+	color: #ff0000;
+}
+#imagem {
+	transition: opacity 0.3s;
+}
+.legenda{
+	font-style: italic;
+	font-size: 0.8em;
+	text-align: center;
+}
+#lgd{
+	font-style: italic;
+	font-size: 1em;
+	text-align: center;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 1080px) {
+    #about section{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 670px) {
+    #about section{
+        width: 90%;
+    }
+	#about p{
+		font-size: 0.95em;
+	}
+    .border-img {
+        height: 200px;
+    }
+}
