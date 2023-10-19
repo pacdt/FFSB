@@ -4,10 +4,18 @@ body {
 #bg{
 	width: 100vw;
 	height: 500px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-top: -20px;
 	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	text-align: center;
+}
+#titulo{
+	color: #fff;
+	font-size: 2em;
+	font-weight: 400;
 }
 #about {
 	width: 100%;
@@ -39,7 +47,7 @@ h3{
 #about section {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
+	width: 60%;
 	gap: 15px;
 	align-items: center;
 	justify-content: center;

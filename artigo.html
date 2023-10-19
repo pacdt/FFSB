@@ -21,21 +21,24 @@
 				alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus" />
 			<nav>
 				<ul>
-					<li><a class="active-tab" href="index.html">Home</a></li>
-					<li><a href="about.html">Quem Somos</a></li>
-					<li><a href="historico.html">Histórico</a></li>
-					<li><a href="baluartes.html">Baluartes</a></li>
-					<li><a href="acoes.html">Ações</a></li>
-					<li><a href="contato">Contato</a></li>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./pages/quemSomos.html">Quem Somos</a></li>
+					<li><a href="./pages/historico.html">Histórico</a></li>
+					<li><a href="./pages/baluartes.html">Baluartes</a></li>
+					<li><a href="./pages/acoes.html">Ações</a></li>
+					<li><a href="./pages/contato.html">Contato</a></li>
 				</ul>
 			</nav>
 		</header>
-		<main id="bg"></main>
-		<main>
-			<section id="about">
-				<h2 id="titulo"></h2>
+		<main id="bg">
+			<img class="border-img" id="imagem" src="" alt="" />
+			<h2 id="titulo"></h2>
+		</main>
+		<main id="about">
+			<section >
+				<br>
 				<p id="conteudo"></p>
-				<img id="imagem" src="" alt="" width="200px" />
+				<br>
 			</section>
 		</main>
 
@@ -52,7 +55,7 @@
 					var artigo = data.find((a) => a.id == id);
 					const bg = artigo.imagem;
 					const mainBg = document.querySelector("#bg");
-					mainBg.style = `background-image: url("${bg}") rgba(0, 0, 0, 0.5)`
+					mainBg.style = `background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("${bg}") no-repeat center/cover`
 					console.log(bg);
 					// Exibe os dados do artigo na página
 					document.getElementById("titulo").textContent =
