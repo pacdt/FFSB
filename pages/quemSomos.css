@@ -9,6 +9,7 @@ body {
 	align-items: center;
 	gap: 15px;
     text-align: justify;
+	padding: 10px;
 }
 h3{
     font-size: 1.5em;
