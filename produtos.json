@@ -2,26 +2,26 @@
     {
         "id": 1,
         "titulo": "Cruz de São Bento",
-        "imagem": "https://1.bp.blogspot.com/-8OQzFjg3f_I/Xlkc2KwsVGI/AAAAAAAAvDQ/9NkdIKcmXVsrKPscXAWnwryqHuLVl7n3gCKgBGAsYHg/s1600/download%2B%25281%2529.jpeg",
+        "imagem": "/assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
         
     },
     {
         "id": 2,
         "titulo": "Rosário Mariano",
-        "imagem": "https://www.paieterno.com.br/wp-content/uploads/2019/07/Sao-BENTO.jpg",
+        "imagem": "/assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     },
     {
         "id": 3,
         "titulo": "Terço de São Bento",
-        "imagem": "https://catequistasbrasil.com.br/wp-content/uploads/2020/03/virgem-maria-catequistasbrasil.jpg",
+        "imagem": "/assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     },
     {
         "id": 4,
         "titulo": "Imagem do Espírito Santo",
-        "imagem": "https://4.bp.blogspot.com/-8J83BkX0Kko/XCVQMKr4tNI/AAAAAAAAS_o/nScEEydaJGEDwHHeKDmSeYCAnJBF6Lu0gCLcBGAs/s640/MEDALHAS%2Bpreto%2Be%2Bbrnaco.jpg",
+        "imagem": "/assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     }
 ]
