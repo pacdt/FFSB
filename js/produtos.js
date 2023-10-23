@@ -14,8 +14,12 @@ function criarCards(dadosDosCards) {
         var descriptionElement = document.createElement("p");
 		descriptionElement.textContent = "R$ " + cardData.conteudo;
 
-        var buyButton = document.createElement("button");
-        buyButton.textContent = "Fazer Pedido";
+        var buyButton = document.createElement("a");
+        buyButton.innerHTML = `
+		<button>Fazer pedido</button>
+		`
+		buyButton.href = `https://api.whatsapp.com/send?phone=5579998789509&text=Olá, gostaria de fazer o pedido do produto ${cardData.titulo}`
+		buyButton.target = "_blank"
 
         
         cardElement.appendChild(imgProduct);
