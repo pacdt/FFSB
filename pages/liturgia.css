@@ -39,3 +39,8 @@ main {
 	color: #000;
 	text-shadow: 1px 1px 1px #000;
 }
+#conteudo, #conteudo2, #conteudo-s, #conteudo-e{
+	text-align: justify;
+	word-wrap: normal;
+	word-break: normal;
+}
