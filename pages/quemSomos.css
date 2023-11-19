@@ -138,22 +138,33 @@ hr {
   padding: 10px;
   margin-top: 15px;
 }
+.l-img{
+  max-width: 800px;
+}
 
 @media screen and (max-width: 1080px) {
   #about section,
   #produtos section {
-    width: 80%;
+    width: 85%;
+    padding: 0px;
+  }
+  .l-img{
+    max-width: 600px;
   }
 }
 @media screen and (max-width: 670px) {
   #about section,
   #produtos section {
-    width: 90%;
+    width: 95%;
+    padding: 0px;
   }
   #about p {
     font-size: 0.95em;
   }
   .border-img {
     height: 200px;
+  }
+  .l-img{
+    max-width: 340px;
   }
 }
