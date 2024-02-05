@@ -2,26 +2,26 @@
     {
         "id": 1,
         "titulo": "Cruz de São Bento",
-        "imagem": "./assets/produtos/cruz-sao-bento.webp",
+        "imagem": "assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
         
     },
     {
         "id": 2,
         "titulo": "Rosário Mariano",
-        "imagem": "./assets/produtos/cruz-sao-bento.webp",
+        "imagem": "assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     },
     {
         "id": 3,
         "titulo": "Terço de São Bento",
-        "imagem": "./assets/produtos/cruz-sao-bento.webp",
+        "imagem": "assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     },
     {
         "id": 4,
         "titulo": "Imagem do Espírito Santo",
-        "imagem": "./assets/produtos/cruz-sao-bento.webp",
+        "imagem": "assets/produtos/cruz-sao-bento.webp",
         "conteudo": 25.99
     }
 ]
