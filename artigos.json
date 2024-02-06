@@ -1,5 +1,11 @@
 [
     {
+        "id": 0,
+        "titulo": "Santa Missa Solene em honra a Santa Escolástica",
+        "imagem": "/assets/img/missa-fev-2024.jpeg",
+        "conteudo": "Santa Missa em Honra a Santa Escolástica! <br> Celebrante: Pe. José Fernandes - Reitor do Seminário Propedêutico. <br><br> Data: <strong>10/02/2024</strong> <br> Local: Casa Feminina - Rua Santa Rita, 100 - Pov. Guajará - Socorro - SE"     
+    },
+    {
         "id": 1,
         "titulo": "O que é Oração?",
         "imagem": "https://1.bp.blogspot.com/-8OQzFjg3f_I/Xlkc2KwsVGI/AAAAAAAAvDQ/9NkdIKcmXVsrKPscXAWnwryqHuLVl7n3gCKgBGAsYHg/s1600/download%2B%25281%2529.jpeg",
