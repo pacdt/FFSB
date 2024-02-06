@@ -24,7 +24,7 @@ function criarCards(dadosDosCards) {
         
         cardElement.appendChild(imgProduct);
 		cardElement.appendChild(tituloElement);
-        cardElement.appendChild(descriptionElement);
+        // cardElement.appendChild(descriptionElement);
         cardElement.appendChild(buyButton);
 		cardsContainer.appendChild(cardElement);
 	});
