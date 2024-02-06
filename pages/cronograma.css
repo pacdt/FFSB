@@ -34,6 +34,9 @@ h5 {
 	font-size: .9em;
 	color: #ec6516;
 }
+.prox-evento{
+	color: red;
+}
 
 @media screen and (max-width: 1080px) {
 	#cronograma section {
