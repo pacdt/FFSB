@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "Canecas Personalizadas",
-        "imagem": "/assets/produtos/Canecas-personalizadas.jpeg",
+        "imagem": "./assets/produtos/Canecas-personalizadas.jpeg",
         "conteudo": 25.99
     },
     {
