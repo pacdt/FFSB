@@ -3,7 +3,7 @@
         "id": 5,
         "titulo": "TV Canção Nova - Entrevista",
         "imagem": "https://yt3.googleusercontent.com/ytc/AIf8zZTqXIer4wEvbicU8XrK8HSnU_s3iqHXOOJ1c-DpVQ=s900-c-k-c0x00ffffff-no-rj",
-        "conteudo":"<iframe class='video' src='https://www.youtube.com/embed/NfL_3dQPTVE?si=ZmyQF8I6513ZNtAA&amp;controls=0' title='Entrevista TV Canção Nova' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>"
+        "conteudo":"<iframe class='video' src='https://www.youtube.com/embed/NfL_3dQPTVE?si=ZmyQF8I6513ZNtAA&amp;modestbranding=1&amp;showinfo=0&amp;controls=0;' frameborder='0' allow='accelerometer; autoplay;' allowfullscreen></iframe>"
     },
     {
         "id": 0,
