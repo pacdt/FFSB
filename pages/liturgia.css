@@ -18,6 +18,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 	gap: 15px;
+	/* padding: 10px; */
 }
 #primeiraLeitura,
 #segundaLeitura,
@@ -43,4 +44,21 @@ main {
 	text-align: justify;
 	word-wrap: normal;
 	word-break: normal;
+}
+
+p{
+	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 978px) {
+	#liturgia{
+		width: 90%;
+	}
+}
+@media screen and (max-width: 854px) {
+	#liturgia{
+		width: 70%;
+		align-items: center;
+		margin: 0 auto;
+	}
 }
