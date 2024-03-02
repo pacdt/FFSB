@@ -50,10 +50,7 @@ main {
 p{
 	margin-bottom: 5px;
 }
-.copyright{
-	margin-top: 20px;
-	text-align: center;
-}
+
 @media screen and (max-width: 978px) {
 	#liturgia{
 		width: 90%;
