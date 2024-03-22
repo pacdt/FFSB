@@ -1,5 +1,11 @@
 [
     {
+        "id": 7,
+        "titulo": "Festa do Trânsito de São Bento",
+        "imagem": "/assets/img/festa-sao-bento-03-2024.jpeg",
+        "conteudo": "<p>21 de março é o dia  exato da morte de nosso Venerável pai São Bento, dia de seu nascimento no Céu. Por isso nós Filhos e Filhas de São Bento honramos dignamente o nosso Baluarte nesta data especial para todos as Congregações e Mosteiros da Ordem Beneditina.</p> <br><br> <img class='border-img' src='./assets/img/fsb-03.jpeg' alt='Bispo celebrando a Missa da Festa de São Bento - 21/03/2024' /> <br> <p>Neste Ano de 2024 o ponto mais alto para nós foi a <strong>Celebração Eucarística Solene presidida por Sua Excelência Reverendíssima Dom José Genivaldo Garcia Bispo da Diocese</strong> que outrora ainda como Padre da nossa Arquidiocese de Aracajú conferiu ao nosso Fundador Irmão Francisco os sacramentos do Batismo e da Crisma e o acompanhou na sua caminhada de fé cristã.</p> <br><br> <img class='border-img' src='./assets/img/fsb-03.jpeg' alt='Bispo celebrando a Missa da Festa de São Bento - 21/03/2024' /> <br> <p>Na sua homilia Dom Genivaldo ressaltou que além de celebrar a Santa Missa o sentido desta vinda dele à Casa da nossa Fraternidade era recordar o início de seu sacerdócio a 30 anos atrás, bem como vislumbrar a obra que viu iniciar e acompanhava a distância, mas ainda não tinha visto pessoalmente, dizia ele: <em> &quot;eu não podia deixar de dá esse testemunho, pois, achava que iria chegar e encontrar algo pequeno, menor, mas, estou vendo como a obra é grande, está crescendo... e o mais belo de tudo ver como Deus se utiliza da nossa pobreza, escolhe os pequenos e realiza coisas grandiosas que escandaliza uns, edifica outros, obra para o bem do povo e crescimento do Reino. E após partilhar da perseguição dos fariseus a Jesus por causa da inveja e porque queriam um messias do seu jeito, do seu gosto próprio, explicando que somos nós que devemos nos adequar a Jesus, não é Jesus que se submete a nossas vontades... enquanto os fariseus agiam na mentira nós devemos seguir o Cristo que é a Verdade, o Caminho e a Vida.&quot;</em></p> <br><br> <img class='border-img' src='./assets/img/fsb-03.jpeg' alt='Bispo celebrando a Missa da Festa de São Bento - 21/03/2024' /> <br> <p>Essa presença acolhedora da Santa Igreja na pessoa de Dom Genivaldo fez com que este dia fosse mais que especial para nossa Fraternidade, não temos outra expressão a não ser GRATIDÃO, só temos que louvar e ser grato a Deus pelos imensos benefícios que Ele tem realizado em nosso favor."   
+    },
+    {
         "id": 6,
         "titulo": "Dose Dupla - PodCast",
         "imagem": "/assets/img/podcast.jpeg",
@@ -27,7 +33,7 @@
     {
         "id": 2,
         "titulo": "Santa Regra de São Bento",
-        "imagem": "https://www.paieterno.com.br/wp-content/uploads/2019/07/Sao-BENTO.jpg",
+        "imagem": "./assets/img/sb.webp",
         "conteudo": "<h3>Para acessar todo o conteúdo da Santa Regra de São Bento, clique <a href='https://www.asg.org.br/images/saoBento/RegraSB.pdf' target='_blank'>aqui</a> para visualizar o PDF"
     },
     {
