@@ -1,0 +1,56 @@
+.cronograma-page {
+  padding: 2rem 0 4rem;
+  margin-top: 2rem;
+}
+
+.cronograma-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cronograma-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cronograma-card-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  color: #373d55;
+  margin-bottom: 0.75rem;
+}
+
+.cronograma-card-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cronograma-card p {
+  margin: 0.35rem 0;
+  color: #444;
+}
+
+.cronograma-muted {
+  color: #666;
+}
+
+.cronograma-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0066cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cronograma-link:hover {
+  text-decoration: underline;
+}

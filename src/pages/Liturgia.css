@@ -1,0 +1,26 @@
+.liturgia-page {
+  padding: 2rem 0 4rem;
+  margin-top: 2rem;
+}
+
+.liturgia-status {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.liturgia-content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.liturgia-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.liturgia-content a {
+  color: #373d55;
+  text-decoration: underline;
+}

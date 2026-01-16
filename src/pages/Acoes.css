@@ -1,0 +1,211 @@
+.acoes {
+  padding-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.highlight-title {
+  color: #8b0000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.quote-box {
+  background-color: #f3e4c5;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid #373d55;
+  margin: 2rem 0;
+  font-style: italic;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.quote-box cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: right;
+  color: #555;
+}
+
+.gallery-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.instruction {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-carousel {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.carousel-slide {
+  border: none;
+  padding: 0;
+  background: transparent;
+  flex: 0 0 100%;
+}
+
+.carousel-slide.gallery-item {
+  aspect-ratio: 16/9;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 61, 85, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-caption {
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.modal-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.modal-prev {
+  left: -64px;
+}
+
+.modal-next {
+  right: -64px;
+}
+
+@media (max-width: 768px) {
+  .modal-prev {
+    left: 0;
+  }
+
+  .modal-next {
+    right: 0;
+  }
+}

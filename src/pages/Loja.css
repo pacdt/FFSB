@@ -1,0 +1,85 @@
+.loja-page {
+  padding: 2rem 0 4rem;
+  margin-top: 2rem;
+}
+
+.loja-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.loja-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0.5rem 0 2.25rem;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.produto-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.produto-img {
+  height: 220px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.produto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.produto-body {
+  padding: 1.1rem 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.produto-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #373d55;
+  line-height: 1.35;
+}
+
+.produto-price {
+  margin: 0;
+  color: #8b0000;
+  font-weight: 700;
+}
+
+.produto-cta {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #373d55;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.produto-cta:hover {
+  background: #2a2f45;
+}

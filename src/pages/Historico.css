@@ -1,0 +1,176 @@
+.historico {
+  padding-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.quote-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
+}
+
+.quote-section blockquote {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5rem;
+  color: #373d55;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.quote-section cite {
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.content-block {
+  margin-bottom: 4rem;
+}
+
+.text-image-wrap {
+  overflow: hidden; /* Clearfix */
+}
+
+.float-img-right {
+  float: right;
+  width: 300px;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.highlight-text {
+  background-color: rgba(55, 61, 85, 0.05);
+  border-left: 4px solid #373d55;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #444;
+}
+
+.school-section {
+  background-color: #373d55;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 4rem 0;
+}
+
+.school-section h3 {
+  color: #d4af37;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.school-section .subtitle {
+  color: #ccc;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 300px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-card h4 {
+  color: #ffe29f;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.centered-image-block {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.featured-wide {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.medium-img {
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.center-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.margin-top {
+  margin-top: 3rem;
+}
+
+.highlight-box-small {
+  background-color: #f3e4c5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1.5rem 0;
+  border: 1px solid #d4af37;
+}
+
+.highlight-box-small p {
+  margin: 0;
+  color: #373d55;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .float-img-right {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .school-section {
+    padding: 2rem 1rem;
+  }
+  
+  .featured-wide {
+    height: auto;
+  }
+  
+  .quote-section blockquote {
+    font-size: 1.2rem;
+  }
+}

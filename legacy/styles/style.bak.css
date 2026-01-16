@@ -1,0 +1,146 @@
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+header #banner{
+    background: #FFE29F url('../assets/banner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 240px;
+}
+nav{
+    width: 100%;
+    background-color: #373D55;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+nav ul li{
+    padding: 10px;
+}
+nav ul li a{
+    color: #FFE29F;
+    font-weight: 400;
+}
+nav ul li a:hover{
+    color: #FFF;
+}
+.active-tab{
+    color: #fff
+}
+.active-tab:hover{
+    cursor: not-allowed;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+}
+main section{
+    height: 500px;
+    width: 80%;
+    background-color: #373D55;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+main section #cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+}
+.artigo-card{
+    width: 300px;
+    height: 150px;
+    color: #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+.artigo-card:hover{
+    cursor: pointer;
+}
+main article{
+    width: 20%;
+    height: 500px;
+    background-color: #d62b33;
+}
+
+
+
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #FFE29F;
+    padding: 30px;
+}
+footer h2{
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+footer h5{
+    font-size: 1rem;
+}
+footer #fale-conosco{
+    display: flex;
+    flex-direction: column;
+}
+footer #footer-logo img{
+    /* width: 15%; */
+    max-width: 180px;
+}
+footer #whats{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#credits{
+    background-color: #373D55;
+    color: #FFF;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+#credits h6{
+    font-size: .9rem;
+    font-weight: 200;
+}
+#credits a{
+    color: #FFE29F;
+}

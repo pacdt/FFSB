@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* font-family: "Inter", sans-serif; */
+	font-family: "Libre Baskerville", sans-serif;
+	list-style: none;
+	overflow-x: hidden;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	background: #f3e4c5;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+header {
+	width: 100%;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 100px;
+}
+.banner {
+	width: 120px;
+	margin-bottom: 20px;
+}
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-transform: uppercase;
+}
+nav ul {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid #000;
+	padding-top: 15px;
+}
+nav ul li a {
+	color: #000;
+	text-decoration: none;
+	font-weight: 500;
+}
+nav ul li a:hover {
+	color: #fff;
+}
+.active-tab{
+	color: #fff;
+}
+#banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+}
+#options {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+#options ul {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+}
+#options ul li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	min-width: 120px;
+}
+#options ul li img {
+	height: 60px;
+}
+#options ul li a {
+	color: #000;
+	text-decoration: none;
+	padding: 4px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+#artigos {
+	width: 100%;
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#section-title {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	/* margin-bottom: 50px; */
+	justify-content: center;
+	align-items: center;
+}
+#section-title h2{
+	font-weight: 400;
+}
+#section-title hr {
+	width: 90%;
+	height: 1px;
+	background-color: #000;
+}
+#cards {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 50px;
+	margin-bottom: 200px;
+	padding: 20px;
+}
+.artigo-card {
+	width: 300px;
+	height: 150px;
+	color: #fff;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding: 15px;
+	font-size: 1.5rem;
+	margin: 25px;
+	transition: transform 0.3s ease;
+}
+.artigo-card:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+#credits {
+	background-color: #373d55;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+#credits h6 {
+	font-size: 0.9rem;
+	font-weight: 200;
+}
+#credits a {
+	color: #ffe29f;
+}
+
+footer {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: #ffe29f;
+}
+#infos {
+	width: 80%;
+	display: flex;
+	gap: 30px;
+	padding: 50px;
+}
+#infos h4 {
+	font-weight: 400;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+#infos h5 {
+	font-weight: 400;
+	font-size: 16px;
+}
+#infos a {
+	color: #373d55;
+	text-decoration: none;
+}
+#infos a:hover {
+	color: #fff;
+}
+.logo-footer {
+	width: 180px;
+	height: 200px;
+	border-right: 2px solid #fff;
+}
+.whatsapp-logo {
+	width: 30px;
+}
+#local{
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+}
+#local section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+}
+#local h4 a{
+	color: #373d55;
+	text-decoration: none;
+}
+
+
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1200px) {
+	#options ul {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 1080px) {
+	#section-title hr {
+		width: 70%;
+	}
+	#section-title {
+		gap: 15px;
+	}
+	#infos {
+		width: 100%;
+		gap: 20px;
+		padding: 40px;
+	}
+}
+@media screen and (max-width: 978px) {
+	#section-title hr {
+		width: 80%;
+	}
+	#section-title {
+		gap: 10px;
+	}
+	.banner-img {
+		width: 90vw;
+	}
+	#cards {
+		width: 90%;
+		gap: 30px;
+	}
+}
+@media screen and (max-width: 854px) {
+	header {
+		width: 100%;
+		height: auto;
+		margin-bottom: 40px;
+	}
+	nav ul {
+		width: 85%;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		padding-top: 10px;
+		gap: 20px;
+	}
+	#artigos {
+		margin-top: 50px;
+	}
+	#options {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 25px;
+	}
+	#options ul {
+		width: 80%;
+		padding: 20px;
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	#options ul li img {
+		height: 50px;
+	}
+	#section-title {
+		width: 90%;
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		justify-content: center;
+		align-items: center;
+	}
+	#section-title h2 {
+		font-weight: 400;
+	}
+	#section-title hr {
+		display: none;
+	}
+
+	#cards {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+		margin-bottom: 100px;
+		padding: 0px;
+	}
+
+	#credits {
+		text-align: center;
+	}
+
+	footer {
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		background-color: #ffe29f;
+	}
+	#infos {
+		width: 100%;
+		gap: 10px;
+		flex-direction: column;
+		padding: 10px;
+		align-items: center;
+		text-align: center;
+	}
+	#infos h4 {
+		font-size: 16px;
+	}
+	.logo-footer {
+		width: 120px;
+		height: auto;
+		border: none;
+	}
+	.whatsapp-logo {
+		width: 40px;
+	}
+}

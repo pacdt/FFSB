@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Liturgia Diária (CNBB) - Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus"
+    />
+    <meta property="og:image" content="./assets/logo.png" />
+    <meta property="og:url" content="http://ffsb.com.br" />
+    <meta property="og:title" content="Filhos e Filhas de São Bento" />
+    <!-- Fim SEO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../assets/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="liturgia.css" />
+
+    <title>Liturgia Diária</title>
+  </head>
+
+  <body>
+    <header>
+      <img
+        class="banner"
+        src="../assets/logo.png"
+        alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus"
+      />
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/quemSomos.html">Quem Somos</a></li>
+          <li><a href="../pages/historico.html">Histórico</a></li>
+          <li><a href="../pages/baluartes.html">Baluartes</a></li>
+          <li><a href="../pages/acoes.html">Ações</a></li>
+          <li><a href="../pages/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="liturgia">
+      </section>
+    </main>
+
+	<script>
+		const url = "https://pacdt.github.io/Liturgia-diaria/";
+		fetch(url)
+		.then(response => response.text())
+		.then(html => document.getElementById("liturgia").innerHTML = html);
+	</script>
+
+<footer>
+</footer>
+<div id="credits">
+</div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

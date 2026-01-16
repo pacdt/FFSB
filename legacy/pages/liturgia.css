@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Libre Baskerville", sans-serif;
+}
+header {
+	margin-bottom: 50px;
+}
+main {
+	width: 100vw;
+	display: flex;
+	margin-bottom: 50px;
+}
+#liturgia {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+#primeiraLeitura,
+#segundaLeitura,
+#segLeitura,
+#salmo,
+#evangelho {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 20px;
+}
+.txt-titulo {
+	color: red;
+}
+#cor {
+	color: #000;
+	text-shadow: 1px 1px 1px #000;
+}
+#conteudo, #conteudo2, #conteudo-s, #conteudo-e{
+	text-align: justify;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+p{
+	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 978px) {
+	#liturgia{
+		width: 90%;
+	}
+}
+@media screen and (max-width: 854px) {
+	#liturgia{
+		width: 70%;
+		align-items: center;
+		margin: 0 auto;
+	}
+}

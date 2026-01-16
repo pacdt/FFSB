@@ -1,0 +1,198 @@
+.baluartes {
+  padding-bottom: 4rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+.intro-card {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.intro-card h2 {
+  color: #373d55;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.intro-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content-block {
+  margin-bottom: 4rem;
+}
+
+.subsection-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #373d55;
+  font-size: 1.8rem;
+}
+
+.text-image-split {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.text-image-split.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-side,
+.image-side {
+  flex: 1;
+}
+
+.text-side p {
+  text-align: justify;
+}
+
+.image-side img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.full-width-block {
+  margin-top: 2rem;
+}
+
+.centered-figure {
+  text-align: center;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.centered-figure figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  color: #666;
+  max-width: 900px;
+}
+
+.curiosity-box {
+  background-color: #f3e4c5;
+  border-left: 5px solid #d4af37;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.curiosity-box h4 {
+  color: #8b0000;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.bg-alt {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.story-block {
+  margin-top: 3rem;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-block h3 {
+  color: #d4af37;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.story-img {
+  max-width: 800px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0 auto 2rem;
+  object-fit: cover;
+}
+
+.dialogue-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.dialogue-box p {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.scholastica {
+  background-color: #ffe29f;
+  margin-right: 2rem;
+  border-bottom-left-radius: 0;
+}
+
+.scholastica::before {
+  content: "Santa Escolástica:";
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.benedict {
+  background-color: #dceefb;
+  margin-left: 2rem;
+  text-align: right;
+  border-bottom-right-radius: 0;
+}
+
+.benedict::before {
+  content: "São Bento:";
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .text-image-split,
+  .text-image-split.reverse {
+    flex-direction: column;
+  }
+
+  .bg-alt {
+    padding: 2rem 1.25rem;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Site Intitucional do Recanto Subiaco Filhos & Filhas de São Bento do Coração Eucarístico de Jesus"
+    />
+    <meta property="og:image" content="./assets/logo.png" />
+    <meta property="og:url" content="http://ffsb.com.br" />
+    <meta property="og:title" content="Filhos e Filhas de São Bento" />
+    <!-- Fim SEO -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/responsivePage.css" />
+    <title>FFSB</title>
+  </head>
+  <body>
+    <header>
+      <img
+        class="banner"
+        src="./assets/logo.png"
+        alt="Logo dos Filhos e Filhas de São Bento do Sagrado Coração Eucarístico de Jesus"
+      />
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/quemSomos.html">Quem Somos</a></li>
+          <li><a href="./pages/historico.html">Histórico</a></li>
+          <li><a href="./pages/baluartes.html">Baluartes</a></li>
+          <li><a href="./pages/acoes.html">Ações</a></li>
+          <li><a href="./pages/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="bg">
+      <img class="border-img" id="imagem" src="" alt="" />
+      <h2 id="titulo"></h2>
+    </main>
+    <main id="about">
+      <section>
+        <br />
+        <p id="conteudo"></p>
+        <br />
+      </section>
+    </main>
+
+    <script>
+      // Recupera o ID do artigo da URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var id = urlParams.get("id");
+
+      // Carrega os dados do arquivo JSON
+      fetch("artigos.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Encontra o artigo correspondente com base no ID
+          var artigo = data.find((a) => a.id == id);
+          const bg = artigo.imagem;
+          const mainBg = document.querySelector("#bg");
+          mainBg.style = `background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("${bg}") no-repeat center/cover`;
+          console.log(bg);
+          // Exibe os dados do artigo na página
+          document.getElementById("titulo").textContent = artigo.titulo;
+          document.getElementById("conteudo").innerHTML = artigo.conteudo;
+
+          document.getElementById("imagem").src = artigo.imagem;
+        });
+    </script>
+
+<footer>
+</footer>
+<div id="credits">
+</div>
+    <script src="../js/index.js"></script>
+</body>
+</html>
