@@ -87,6 +87,10 @@ const Home = () => {
             </Link>
           ))}
         </div>
+
+        <Link to="/artigos" className="articles-see-all">
+          Outros artigos
+        </Link>
       </section>
     </div>
   );

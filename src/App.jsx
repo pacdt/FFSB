@@ -8,6 +8,7 @@ import Historico from './pages/Historico';
 import Baluartes from './pages/Baluartes';
 import Acoes from './pages/Acoes';
 import Contato from './pages/Contato';
+import Artigos from './pages/Artigos';
 import Artigo from './pages/Artigo';
 import Liturgia from './pages/Liturgia';
 import Doacoes from './pages/Doacoes';
@@ -46,6 +47,7 @@ function App() {
             <Route path="/cronograma" element={<Cronograma />} />
             <Route path="/localizacao" element={<Localizacao />} />
             <Route path="/loja" element={<Loja />} />
+            <Route path="/artigos" element={<Artigos />} />
             <Route path="/artigo/:id" element={<Artigo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
