@@ -3,13 +3,11 @@ import './Baluartes.css';
 
 import bannerBaluartes from '../assets/img/banner-baluartes.png';
 
-// URLs de imagens (usando links externos temporariamente onde os locais não estão claros ou para manter fidelidade ao legado)
-// Em um projeto real, idealmente baixaríamos essas imagens para assets locais
-const imgSaoBento = "https://4.bp.blogspot.com/-iCZmLpURhFg/XCVW7FB9ziI/AAAAAAAATA8/DqonD33f7KsNa4zS9yKrUzyegJ8DWbh0wCLcBGAs/s400/sao-bento.jpg";
-const imgSaoBentoRegra = "https://2.bp.blogspot.com/-5GOiU8wNoLg/XCVW7HLYyaI/AAAAAAAATA4/e_wKpKw_68onRmSAf3UPDA-BM0k2kvjewCLcBGAs/s640/St_Benedict.jpg";
-const imgMorteBento = "https://2.bp.blogspot.com/-YzGlSC8lKDY/XCVZIxyHeuI/AAAAAAAATBU/bFVdyaWKEkU6LxbbXggDaNdeZX0EfyA9ACLcBGAs/s400/Transporte%2Bde%2BBento.jpg";
-const imgSantaEscolastica = "https://2.bp.blogspot.com/-eBENgym8FKY/XCVZczFeyuI/AAAAAAAATBc/T5r1hfK6x-gTStxTM2JxsMRCFUP8IKDUQCLcBGAs/s640/santa-escolastica2.jpg";
-const imgDespedida = "https://www.pliniocorreadeoliveira.info/santa-scolastica%20sao%20Bento%20Subiaco.jpg";
+const imgSaoBento = '/BALUARTES/1.png';
+const imgSaoBentoRegra = '/BALUARTES/2.png';
+const imgMorteBento = '/BALUARTES/3.png';
+const imgSantaEscolastica = '/BALUARTES/4.png';
+const imgDespedida = '/BALUARTES/5.png';
 
 const Baluartes = () => {
   return (
