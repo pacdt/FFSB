@@ -3,73 +3,73 @@
         "id": 1,
         "titulo": "Canecas Personalizadas",
         "imagem": "/assets/produtos/Canecas-personalizadas.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 2,
         "titulo": "Cúpula com Nossa Senhora Aparecida",
         "imagem": "/assets/produtos/cupula-com-Nossa-Senhora-Aparecida.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 3,
         "titulo": "Livrinhos Devocionais de Bolso",
         "imagem": "/assets/produtos/Livrinhos-devocionais-de-bolso.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 4,
         "titulo": "Almofada Personalizadas (vários modelos)",
         "imagem": "/assets/produtos/almofadas-personalizadas/1.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 5,
         "titulo": "Camisetas de Santos (vários modelos)",
         "imagem": "/assets/produtos/camisetas-de-santos/1.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 6,
         "titulo": "Conjunto de Alfaias (vários modelos)",
         "imagem": "/assets/produtos/conjunto-de-alfaias/1.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 7,
         "titulo": "Conjunto de Via-Sacra",
         "imagem": "/assets/produtos/conjunto-de-via-sacras.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 8,
         "titulo": "Imagem em Resina (vários modelos)",
         "imagem": "/assets/produtos/imagens-em-resina/2.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 9,
         "titulo": "Imagem em material emborrachado (vários modelos)",
         "imagem": "/assets/produtos/imagens-material-emborrachado/4.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 10,
         "titulo": "Medalhas, cruz e Tau",
         "imagem": "/assets/produtos/medalhas-cruz-e-tau/2.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 11,
         "titulo": "Quadro de Ícones de Santos (vários modelos)",
         "imagem": "/assets/produtos/quadros-de-icones-dos-santos/1.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     },
     {
         "id": 12,
         "titulo": "Terços (vários modelos)",
         "imagem": "/assets/produtos/tercos/1.jpeg",
-        "conteudo": 25.99
+        "conteudo": "Consultar"
     }
    
 ]
