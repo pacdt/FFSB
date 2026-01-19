@@ -197,6 +197,10 @@ figcaption {
   .two-columns {
     grid-template-columns: 1fr;
   }
+
+  .three-columns {
+    grid-template-columns: 1fr;
+  }
   
   .image-grid img {
     height: auto;

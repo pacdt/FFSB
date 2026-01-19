@@ -108,6 +108,106 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.flipbook-pdf {
+  margin: 2rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffcf5;
+}
+
+.flipbook-pdf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.flipbook-pdf-body {
+  padding: 1rem;
+  background: #fff;
+}
+
+.flipbook-pdf-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.flipbook-pdf-btn {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  color: #373d55;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flipbook-pdf-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.flipbook-pdf-status {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  flex: 1;
+}
+
+.flipbook-pdf-book-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.flipbook-pdf-book.stf__parent {
+  width: fit-content !important;
+  max-width: none !important;
+}
+
+.flipbook-pdf-book {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.flipbook-pdf-page {
+  background: #fff;
+  overflow: hidden;
+}
+
+.flipbook-pdf-page-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.flipbook-pdf-page-blank .flipbook-pdf-page-inner {
+  background: linear-gradient(90deg, #fff, #fafafa);
+}
+
+.flipbook-pdf-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff;
+}
+
+.flipbook-pdf-fallback {
+  padding: 1rem 0 0;
+  text-align: center;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .article-container {

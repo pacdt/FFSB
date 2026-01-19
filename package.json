@@ -10,12 +10,17 @@
     "preview": "node node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.1",
+    "dompurify": "^3.2.7",
     "lucide-react": "^0.562.0",
+    "pdfjs-dist": "^5.4.530",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-pageflip": "^2.0.3",
     "react-router-dom": "^7.12.0"
   },
   "devDependencies": {
+    "@mdx-js/rollup": "^3.1.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
