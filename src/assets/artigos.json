@@ -1,6 +1,16 @@
 [
   {
     "id": 1,
+    "slug": "consagracao-religiosa-fffsb",
+    "titulo": "Consagração Religiosa FFFSB",
+    "resumo": "",
+    "imagem": "articles/consagracao-religiosa-fffsb/images/IMG-20251120-WA0039.jpg",
+    "createdAt": "2026-01-24",
+    "updatedAt": "2026-01-24",
+    "contentType": "mdx"
+  },
+  {
+    "id": 2,
     "slug": "dom-josafa-nomeia-assessor-eclesiastico-para-o-instituto-filhos-e-filhas-de-sao-bento",
     "titulo": "Dom Josafá nomeia assessor eclesiástico para o Instituto Filhos e Filhas de São Bento",
     "resumo": "",
@@ -10,7 +20,7 @@
     "contentType": "mdx"
   },
   {
-    "id": 2,
+    "id": 3,
     "slug": "santa-missa-solene-em-honra-a-santa-escolastica",
     "titulo": "Santa Missa Solene em honra a Santa Escolástica",
     "resumo": "",
@@ -20,7 +30,7 @@
     "contentType": "mdx"
   },
   {
-    "id": 3,
+    "id": 4,
     "slug": "o-que-e-oracao",
     "titulo": "O que é Oração?",
     "resumo": "",
@@ -30,7 +40,7 @@
     "contentType": "mdx"
   },
   {
-    "id": 4,
+    "id": 5,
     "slug": "regra-de-sao-bento",
     "titulo": "Regra de São Bento",
     "resumo": "",
@@ -40,7 +50,7 @@
     "contentType": "mdx"
   },
   {
-    "id": 5,
+    "id": 6,
     "slug": "seja-voce-tambem-um-escravo-de-amor-da-santissima-virgem",
     "titulo": "Seja você também um Escravo de Amor da Santíssima Virgem!",
     "resumo": "",
@@ -50,7 +60,7 @@
     "contentType": "mdx"
   },
   {
-    "id": 6,
+    "id": 7,
     "slug": "a-medalha-de-sao-bento",
     "titulo": "A medalha de São Bento",
     "resumo": "Breve resumo sobre a Medalha de São Bento",

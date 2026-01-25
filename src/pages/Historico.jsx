@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Historico.css';
 
 // Import images
@@ -10,6 +10,60 @@ const imgFraternidade = 'https://4.bp.blogspot.com/-HroWcLbFFeM/XD9ly22B1yI/AAAA
 const imgConsagracao = 'https://2.bp.blogspot.com/-tD_ytEAMEWo/XD9stsZve7I/AAAAAAAAUrE/gBIyNmGNiTEcaK_0-Hi8LMnUFji5LaRBQCLcBGAs/s640/IMG_20190109_192754.jpg';
 
 const Historico = () => {
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
+
+  const makeImageProps = (src, alt, className) => ({
+    src,
+    alt,
+    className: className ? `${className} image-clickable` : 'image-clickable',
+    role: 'button',
+    tabIndex: 0,
+    onClick: () => openModal(src, alt),
+    onKeyDown: (event) => handleImageKeyDown(event, src, alt),
+  });
+
   return (
     <div className="page-container historico">
       <h1 className="section-title">Nosso Histórico</h1>
@@ -23,7 +77,7 @@ const Historico = () => {
 
       <section className="content-block">
         <div className="text-image-wrap">
-          <img src={imgIrmaoFrancisco1} alt="Irmão Francisco" className="float-img-right" />
+          <img {...makeImageProps(imgIrmaoFrancisco1, 'Irmão Francisco', 'float-img-right')} />
           <p>
             Esta bela frase do nosso querido e amado Pai Fundador, já revela uma das motivações que Deus colocou em seu coração
             para suscitar através dele este novo Carisma, pois, o Irmão Francisco fez esta grande e maravilhosa descoberta, como ele mesmo diz: 
@@ -38,7 +92,7 @@ const Historico = () => {
       <section className="content-block">
         <div className="text-image-split">
           <div className="image-side">
-             <img src={imgIrmaoFrancisco2} alt="Irmão Francisco em oração" />
+             <img {...makeImageProps(imgIrmaoFrancisco2, 'Irmão Francisco em oração')} />
           </div>
           <div className="text-side">
             <p>
@@ -81,7 +135,7 @@ const Historico = () => {
       <section className="content-block">
         <h2 className="subsection-title">Vida Eucarística</h2>
         <div className="centered-image-block">
-            <img src={imgVidaEucaristica} alt="Vida Eucarística" className="featured-wide" />
+            <img {...makeImageProps(imgVidaEucaristica, 'Vida Eucarística', 'featured-wide')} />
         </div>
         
         <p>
@@ -96,7 +150,7 @@ const Historico = () => {
 
         <div className="text-image-split reverse margin-top">
           <div className="image-side">
-             <img src={imgAdoracaoAntiga} alt="Adoração Antiga" />
+             <img {...makeImageProps(imgAdoracaoAntiga, 'Adoração Antiga')} />
           </div>
           <div className="text-side">
             <p>
@@ -120,7 +174,7 @@ const Historico = () => {
         </p>
         
         <div className="centered-image-block">
-            <img src={imgFraternidade} alt="Vida Fraterna" className="medium-img" />
+            <img {...makeImageProps(imgFraternidade, 'Vida Fraterna', 'medium-img')} />
         </div>
 
         <p className="center-text">
@@ -130,7 +184,7 @@ const Historico = () => {
 
         <div className="text-image-split margin-top">
           <div className="image-side">
-             <img src={imgConsagracao} alt="Consagração" />
+             <img {...makeImageProps(imgConsagracao, 'Consagração')} />
           </div>
           <div className="text-side">
             <p>
@@ -147,6 +201,18 @@ const Historico = () => {
           </div>
         </div>
       </section>
+
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal} type="button">
+              &times;
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} />
+            <p className="modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

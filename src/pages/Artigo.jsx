@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+import React, { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { MDXProvider } from '@mdx-js/react';
@@ -317,6 +317,25 @@ const Artigo = () => {
   const [loading, setLoading] = useState(true);
   const [MdxComponent, setMdxComponent] = useState(null);
   const [mdxLoading, setMdxLoading] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -360,10 +379,47 @@ const Artigo = () => {
       },
       img: (props) => {
         const normalizedSrc = resolveContentAssetUrl({ slug, reference: props?.src });
-        return <img {...props} src={normalizedSrc} />;
+        const alt = props?.alt || 'Imagem';
+        const className = props?.className ? `${props.className} image-clickable` : 'image-clickable';
+        return (
+          <img
+            {...props}
+            src={normalizedSrc}
+            alt={alt}
+            className={className}
+            role="button"
+            tabIndex={0}
+            onClick={() => openModal(normalizedSrc, alt)}
+            onKeyDown={(event) => handleImageKeyDown(event, normalizedSrc, alt)}
+          />
+        );
       },
     };
-  }, [article?.slug]);
+  }, [article?.slug, handleImageKeyDown, openModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
 
   if (loading) {
     return <div className="page-container loading">Carregando...</div>;
@@ -397,11 +453,35 @@ const Artigo = () => {
 
         {article.imagem && (
           <div className="article-featured-image">
-            <img src={resolveContentAssetUrl({ slug: article.slug, reference: article.imagem })} alt={article.titulo} />
+            <img
+              src={resolveContentAssetUrl({ slug: article.slug, reference: article.imagem })}
+              alt={article.titulo}
+              className="image-clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                openModal(resolveContentAssetUrl({ slug: article.slug, reference: article.imagem }), article.titulo)
+              }
+              onKeyDown={(event) =>
+                handleImageKeyDown(
+                  event,
+                  resolveContentAssetUrl({ slug: article.slug, reference: article.imagem }),
+                  article.titulo,
+                )
+              }
+            />
           </div>
         )}
 
-        <div className="article-body">
+        <div
+          className="article-body"
+          onClick={(event) => {
+            const target = event.target;
+            if (target instanceof HTMLImageElement) {
+              openModal(target.currentSrc || target.src, target.alt || 'Imagem');
+            }
+          }}
+        >
           {article.contentType === 'mdx' ? (
             mdxLoading ? (
               <div>Carregando conteúdo...</div>
@@ -450,6 +530,18 @@ const Artigo = () => {
             />
           )}
         </div>
+
+        {modalImage && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+              <button className="close-btn" onClick={closeModal} type="button">
+                &times;
+              </button>
+              <img src={modalImage.src} alt={modalImage.alt} />
+              <p className="modal-caption">{modalImage.alt}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

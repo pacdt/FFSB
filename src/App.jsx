@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -29,6 +29,38 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [imageModal, setImageModal] = useState(null);
+
+  useEffect(() => {
+    const onClick = (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLImageElement)) return;
+      if (!target.closest('.page-container')) return;
+      if (target.closest('a')) return;
+      if (target.closest('button')) return;
+      const src = target.currentSrc || target.src;
+      if (!src) return;
+      event.preventDefault();
+      setImageModal({ src, alt: target.alt || '' });
+    };
+
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
+  useEffect(() => {
+    if (!imageModal) return;
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setImageModal(null);
+    };
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [imageModal]);
+
   return (
     <Router>
       <div className="app-container">
@@ -53,6 +85,16 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        {imageModal ? (
+          <div className="image-modal-overlay" onClick={() => setImageModal(null)}>
+            <div className="image-modal-content" onClick={(event) => event.stopPropagation()}>
+              <button type="button" className="image-modal-close" onClick={() => setImageModal(null)}>
+                ×
+              </button>
+              <img src={imageModal.src} alt={imageModal.alt} />
+            </div>
+          </div>
+        ) : null}
       </div>
     </Router>
   );

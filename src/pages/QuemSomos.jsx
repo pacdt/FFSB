@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './QuemSomos.css';
 
 // Import images
@@ -15,12 +15,66 @@ import imgTrabalho from '../assets/img/qs-trabalho.jpg';
 import imgTrabalho2 from '../assets/img/qs-trabalho2.jpg';
 
 const QuemSomos = () => {
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
+
+  const makeImageProps = (src, alt, className) => ({
+    src,
+    alt,
+    className: className ? `${className} image-clickable` : 'image-clickable',
+    role: 'button',
+    tabIndex: 0,
+    onClick: () => openModal(src, alt),
+    onKeyDown: (event) => handleImageKeyDown(event, src, alt),
+  });
+
   return (
     <div className="page-container quem-somos">
       <h1 className="section-title">Quem Somos?</h1>
 
       <section className="intro-section">
-        <img src={imgMontagem} alt="Montagem da Comunidade" className="featured-img" />
+        <img {...makeImageProps(imgMontagem, 'Montagem da Comunidade', 'featured-img')} />
         
         <div className="text-content">
           <p>
@@ -58,8 +112,8 @@ const QuemSomos = () => {
           Votos de Obediência, Estabilidade e Santidade.
         </p>
         <div className="image-grid two-columns">
-          <img src={imgIrmaos} alt="Irmãos da Comunidade" />
-          <img src={imgIrmas} alt="Irmãs da Comunidade" />
+          <img {...makeImageProps(imgIrmaos, 'Irmãos da Comunidade')} />
+          <img {...makeImageProps(imgIrmas, 'Irmãs da Comunidade')} />
         </div>
       </section>
 
@@ -72,9 +126,9 @@ const QuemSomos = () => {
           Oblação com Voto de Serviço a Deus, por meio da Fraternidade.
         </p>
         <div className="image-grid three-columns">
-          <img src={imgComunidade1} alt="Comunidade Leiga 1" />
-          <img src={imgComunidade2} alt="Comunidade Leiga 2" />
-          <img src={imgComunidade3} alt="Comunidade Leiga 3" />
+          <img {...makeImageProps(imgComunidade1, 'Comunidade Leiga 1')} />
+          <img {...makeImageProps(imgComunidade2, 'Comunidade Leiga 2')} />
+          <img {...makeImageProps(imgComunidade3, 'Comunidade Leiga 3')} />
         </div>
       </section>
 
@@ -96,7 +150,7 @@ const QuemSomos = () => {
             </p>
           </div>
           <div className="image-side">
-            <img src={imgLiturgia} alt="Liturgia" />
+            <img {...makeImageProps(imgLiturgia, 'Liturgia')} />
           </div>
         </div>
       </section>
@@ -114,7 +168,7 @@ const QuemSomos = () => {
             </p>
           </div>
           <div className="image-side">
-            <img src={imgAdoracao} alt="Adoração" />
+            <img {...makeImageProps(imgAdoracao, 'Adoração')} />
           </div>
         </div>
       </section>
@@ -139,11 +193,11 @@ const QuemSomos = () => {
           <p className="result">Resultado = 24 horas da Vida de um Monge</p>
         </div>
 
-        <img src={imgEspiritualidade} alt="Espiritualidade" className="full-width-img" />
+        <img {...makeImageProps(imgEspiritualidade, 'Espiritualidade', 'full-width-img')} />
         
         <figure className="image-grid two-columns">
-          <img src={imgTrabalho} alt="Trabalho monástico" />
-          <img src={imgTrabalho2} alt="Trabalho monástico 2" />
+          <img {...makeImageProps(imgTrabalho, 'Trabalho monástico')} />
+          <img {...makeImageProps(imgTrabalho2, 'Trabalho monástico 2')} />
           <figcaption>Nosso trabalho é também oração.</figcaption>
         </figure>
 
@@ -166,6 +220,18 @@ const QuemSomos = () => {
           </div>
         </div>
       </section>
+
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal} type="button">
+              &times;
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} />
+            <p className="modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

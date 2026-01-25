@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { MapPin, Phone, Globe, Mail, ExternalLink } from 'lucide-react';
 import './Contato.css';
 
@@ -7,6 +7,60 @@ import imgCasaMasculina from '../assets/img/contatos.jpeg';
 import imgCasaFeminina from '../assets/img/qs-irmas.jpg';
 
 const Contato = () => {
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
+
+  const makeImageProps = (src, alt, className) => ({
+    src,
+    alt,
+    className: className ? `${className} image-clickable` : 'image-clickable',
+    role: 'button',
+    tabIndex: 0,
+    onClick: () => openModal(src, alt),
+    onKeyDown: (event) => handleImageKeyDown(event, src, alt),
+  });
+
   return (
     <div className="page-container contato">
       <h1 className="section-title">Contato e Localização</h1>
@@ -19,7 +73,7 @@ const Contato = () => {
             <h3>Casa Recanto Subiaco</h3>
           </div>
           
-          <img src={imgCasaMasculina} alt="Casa Masculina" className="contact-img" />
+          <img {...makeImageProps(imgCasaMasculina, 'Casa Masculina', 'contact-img')} />
           
           <div className="card-body">
             <div className="contact-item">
@@ -71,7 +125,7 @@ const Contato = () => {
             <h3>Casa Mãe da Piedade</h3>
           </div>
           
-          <img src={imgCasaFeminina} alt="Casa Feminina" className="contact-img" />
+          <img {...makeImageProps(imgCasaFeminina, 'Casa Feminina', 'contact-img')} />
           
           <div className="card-body">
             <div className="contact-item">
@@ -97,6 +151,18 @@ const Contato = () => {
           </div>
         </div>
       </div>
+
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal} type="button">
+              &times;
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} />
+            <p className="modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

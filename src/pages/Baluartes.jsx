@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Baluartes.css';
 
 import bannerBaluartes from '../assets/img/banner-baluartes.png';
@@ -10,13 +10,67 @@ const imgSantaEscolastica = '/BALUARTES/4.png';
 const imgDespedida = '/BALUARTES/5.png';
 
 const Baluartes = () => {
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
+
+  const makeImageProps = (src, alt, className) => ({
+    src,
+    alt,
+    className: className ? `${className} image-clickable` : 'image-clickable',
+    role: 'button',
+    tabIndex: 0,
+    onClick: () => openModal(src, alt),
+    onKeyDown: (event) => handleImageKeyDown(event, src, alt),
+  });
+
   return (
     <div className="page-container baluartes">
       <h1 className="section-title">Baluartes</h1>
 
       <section className="intro-card">
         <h2>São Bento, Santa Escolástica e a Virgem Santíssima</h2>
-        <img src={bannerBaluartes} alt="Baluartes" className="intro-img" />
+        <img {...makeImageProps(bannerBaluartes, 'Baluartes', 'intro-img')} />
       </section>
 
       {/* Seção São Bento */}
@@ -25,7 +79,7 @@ const Baluartes = () => {
         
         <div className="text-image-split">
           <div className="image-side">
-            <img src={imgSaoBento} alt="São Bento" />
+            <img {...makeImageProps(imgSaoBento, 'São Bento')} />
           </div>
           <div className="text-side">
             <p>
@@ -47,7 +101,7 @@ const Baluartes = () => {
           </p>
           
           <figure className="centered-figure">
-            <img src={imgSaoBentoRegra} alt="São Bento Escrevendo a Santa Regra" />
+            <img {...makeImageProps(imgSaoBentoRegra, 'São Bento Escrevendo a Santa Regra')} />
             <figcaption>São Bento Escrevendo a Santa Regra para guiar os Monges</figcaption>
           </figure>
 
@@ -73,7 +127,7 @@ const Baluartes = () => {
         <h3 className="subsection-title">A Morte (O Transporte)</h3>
         <div className="text-image-split reverse">
           <div className="image-side">
-            <img src={imgMorteBento} alt="Morte de São Bento" />
+            <img {...makeImageProps(imgMorteBento, 'Morte de São Bento')} />
           </div>
           <div className="text-side">
             <p>
@@ -94,7 +148,7 @@ const Baluartes = () => {
         
         <div className="text-image-split">
           <div className="image-side">
-            <img src={imgSantaEscolastica} alt="Santa Escolástica" />
+            <img {...makeImageProps(imgSantaEscolastica, 'Santa Escolástica')} />
           </div>
           <div className="text-side">
             <p>
@@ -110,7 +164,7 @@ const Baluartes = () => {
 
         <div className="story-block">
           <h3>A Despedida</h3>
-          <img src={imgDespedida} alt="Despedida de Bento e Escolástica" className="story-img" />
+          <img {...makeImageProps(imgDespedida, 'Despedida de Bento e Escolástica', 'story-img')} />
           
           <p>
             Era a primeira quinta-feira da Quaresma de 547. Pressentindo sua morte, Santa Escolástica pediu ao irmão:
@@ -132,6 +186,18 @@ const Baluartes = () => {
           </p>
         </div>
       </section>
+
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal} type="button">
+              &times;
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} />
+            <p className="modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

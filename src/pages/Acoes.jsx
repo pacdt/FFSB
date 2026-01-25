@@ -73,6 +73,17 @@ const Acoes = () => {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [modalIndex, closeModal, goPrev, goNext]);
 
+  useEffect(() => {
+    if (modalIndex === null) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalIndex]);
+
   const selectedImage = modalIndex === null ? null : galleryImages[modalIndex];
 
   return (

@@ -1,10 +1,63 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ExternalLink, ShoppingCart } from 'lucide-react';
 import './Loja.css';
 import produtosData from '../assets/produtos.json';
 
 const Loja = () => {
   const phone = '5579998789509';
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = useCallback((src, alt) => {
+    setModalImage({ src, alt });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
+  const handleImageKeyDown = useCallback(
+    (event, src, alt) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(src, alt);
+      }
+    },
+    [openModal],
+  );
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [modalImage, closeModal]);
+
+  useEffect(() => {
+    if (!modalImage) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalImage]);
+
+  const makeImageProps = (src, alt) => ({
+    src,
+    alt,
+    className: 'image-clickable',
+    role: 'button',
+    tabIndex: 0,
+    onClick: () => openModal(src, alt),
+    onKeyDown: (event) => handleImageKeyDown(event, src, alt),
+  });
 
   return (
     <div className="page-container loja-page">
@@ -23,7 +76,7 @@ const Loja = () => {
             return (
               <div key={produto.id} className="produto-card">
                 <div className="produto-img">
-                  <img src={produto.imagem} alt={titulo} loading="lazy" />
+                  <img {...makeImageProps(produto.imagem, titulo)} loading="lazy" />
                 </div>
                 <div className="produto-body">
                   <h3 className="produto-title">{titulo}</h3>
@@ -39,9 +92,20 @@ const Loja = () => {
           })}
         </div>
       </div>
+
+      {modalImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal} type="button">
+              &times;
+            </button>
+            <img src={modalImage.src} alt={modalImage.alt} />
+            <p className="modal-caption">{modalImage.alt}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Loja;
-
