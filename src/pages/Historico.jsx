@@ -77,7 +77,7 @@ const Historico = () => {
 
       <section className="content-block">
         <div className="text-image-wrap">
-          <img {...makeImageProps(imgIrmaoFrancisco1, 'Irmão Francisco', 'float-img-right')} />
+          <img {...makeImageProps(imgIrmaoFrancisco1, 'Irmão Francisco Vitima do Amor', 'float-img-right')} />
           <p>
             Esta bela frase do nosso querido e amado Pai Fundador, já revela uma das motivações que Deus colocou em seu coração
             para suscitar através dele este novo Carisma, pois, o Irmão Francisco fez esta grande e maravilhosa descoberta, como ele mesmo diz: 
@@ -92,7 +92,7 @@ const Historico = () => {
       <section className="content-block">
         <div className="text-image-split">
           <div className="image-side">
-             <img {...makeImageProps(imgIrmaoFrancisco2, 'Irmão Francisco em oração')} />
+             <img {...makeImageProps(imgIrmaoFrancisco2, 'Irmão Francisco Vitima do Amor', 'float-img-left')} />
           </div>
           <div className="text-side">
             <p>
@@ -150,7 +150,7 @@ const Historico = () => {
 
         <div className="text-image-split reverse margin-top">
           <div className="image-side">
-             <img {...makeImageProps(imgAdoracaoAntiga, 'Adoração Antiga')} />
+             <img {...makeImageProps(imgAdoracaoAntiga, 'Adoração')} />
           </div>
           <div className="text-side">
             <p>
@@ -184,7 +184,7 @@ const Historico = () => {
 
         <div className="text-image-split margin-top">
           <div className="image-side">
-             <img {...makeImageProps(imgConsagracao, 'Consagração')} />
+             <img {...makeImageProps(imgConsagracao, 'Vida Fraterna')} />
           </div>
           <div className="text-side">
             <p>

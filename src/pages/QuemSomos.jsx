@@ -74,7 +74,7 @@ const QuemSomos = () => {
       <h1 className="section-title">Quem Somos?</h1>
 
       <section className="intro-section">
-        <img {...makeImageProps(imgMontagem, 'Montagem da Comunidade', 'featured-img')} />
+        <img {...makeImageProps(imgMontagem, 'Comunidade FFSB', 'featured-img')} />
         
         <div className="text-content">
           <p>
@@ -197,7 +197,7 @@ const QuemSomos = () => {
         
         <figure className="image-grid two-columns">
           <img {...makeImageProps(imgTrabalho, 'Trabalho monástico')} />
-          <img {...makeImageProps(imgTrabalho2, 'Trabalho monástico 2')} />
+          <img {...makeImageProps(imgTrabalho2, 'Trabalho monástico')} />
           <figcaption>Nosso trabalho é também oração.</figcaption>
         </figure>
 
