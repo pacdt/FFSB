@@ -5,7 +5,7 @@
 }
 
 .article-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: #fff;
   padding: 3rem;
@@ -137,6 +137,48 @@
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .flipbook-pdf-controls {
+    justify-content: center;
+  }
+  
+  .flipbook-pdf-zoom {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  .flipbook-pdf-btn.btn-prev {
+    order: 2;
+  }
+  
+  .flipbook-pdf-btn.btn-next {
+    order: 3;
+  }
+  
+  .flipbook-pdf-status {
+    order: 4;
+    margin-left: auto;
+  }
+}
+
+.flipbook-pdf-zoom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.03);
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+.zoom-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 3.5ch;
+  text-align: center;
+  color: #373d55;
 }
 
 .flipbook-pdf-btn {
@@ -148,6 +190,13 @@
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipbook-pdf-btn.icon-only {
+  padding: 0.4rem;
 }
 
 .flipbook-pdf-btn:disabled {
@@ -164,15 +213,26 @@
 
 .flipbook-pdf-book-wrap {
   width: 100%;
+  height: 600px; /* Fixed height viewport */
+  max-height: 70vh; /* Responsive constraint */
   display: flex;
-  justify-content: center;
-  overflow: hidden;
+  overflow: auto; /* Allow scrolling inside */
   padding: 0.5rem 0;
+  cursor: grab;
+  /* Ensure children don't force resize */
+  align-items: flex-start; 
+}
+
+.flipbook-pdf-book-wrap:active {
+  cursor: grabbing;
 }
 
 .flipbook-pdf-book.stf__parent {
   width: fit-content !important;
   max-width: none !important;
+  margin: auto;
+  /* Ensure it can grow inside the container without stretching it */
+  flex-shrink: 0; 
 }
 
 .flipbook-pdf-book {

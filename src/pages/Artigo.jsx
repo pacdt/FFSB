@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar } from 'lucide-react';
+import { ArrowLeft, Calendar, ZoomIn, ZoomOut } from 'lucide-react';
 import { MDXProvider } from '@mdx-js/react';
 import DOMPurify from 'dompurify';
 import HTMLFlipBook from 'react-pageflip';
@@ -215,11 +215,84 @@ function FlipbookPdf({ src, title, slug }) {
   const resolvedSrc = resolveContentAssetUrl({ slug, reference: src });
   const flipbookRef = useRef(null);
   const availableRef = useRef(null);
+  const scrollContainerRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
   const { status, pdf, pageCount } = usePdfDocument(resolvedSrc);
   const availableWidth = useElementWidth(availableRef);
   const pageRatio = useFirstPdfPageRatio(pdf);
   const isMobile = availableWidth > 0 && availableWidth < 640;
+  const [zoom, setZoom] = useState(1);
+
+  // Drag to scroll logic
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  const [scrollPos, setScrollPos] = useState({ left: 0, top: 0 });
+
+  const onMouseDown = (e) => {
+    // Only enable drag if zoomed in or if content overflows
+    if (zoom <= 1 && !isMobile) return;
+    
+    setIsDragging(true);
+    setStartPos({ x: e.pageX, y: e.pageY });
+    if (scrollContainerRef.current) {
+        setScrollPos({ 
+            left: scrollContainerRef.current.scrollLeft, 
+            top: scrollContainerRef.current.scrollTop 
+        });
+    }
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const y = e.pageY;
+    const walkX = (x - startPos.x) * 1.5; // Scroll speed
+    const walkY = (y - startPos.y) * 1.5;
+    scrollContainerRef.current.scrollLeft = scrollPos.left - walkX;
+    scrollContainerRef.current.scrollTop = scrollPos.top - walkY;
+  };
+
+  const onMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const onMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Touch support
+  const onTouchStart = (e) => {
+    // Only enable drag if zoomed in or if content overflows
+    if (zoom <= 1 && !isMobile) return;
+    
+    setIsDragging(true);
+    setStartPos({ x: e.touches[0].pageX, y: e.touches[0].pageY });
+    if (scrollContainerRef.current) {
+        setScrollPos({ 
+            left: scrollContainerRef.current.scrollLeft, 
+            top: scrollContainerRef.current.scrollTop 
+        });
+    }
+  };
+
+  const onTouchMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    // Don't prevent default here to allow pinch-zoom if needed, 
+    // but for pan we might want to prevent scrolling the whole page
+    // e.preventDefault(); 
+    
+    const x = e.touches[0].pageX;
+    const y = e.touches[0].pageY;
+    const walkX = (x - startPos.x) * 1.5;
+    const walkY = (y - startPos.y) * 1.5;
+    scrollContainerRef.current.scrollLeft = scrollPos.left - walkX;
+    scrollContainerRef.current.scrollTop = scrollPos.top - walkY;
+  };
+
+  const onTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   const pageSize = useMemo(() => {
     const maxPageWidth = 520;
@@ -228,10 +301,14 @@ function FlipbookPdf({ src, title, slug }) {
         ? Math.max(220, Math.floor(availableWidth - 32))
         : Math.max(220, Math.floor((availableWidth - 32) / 2))
       : maxPageWidth;
-    const pageWidth = Math.min(maxPageWidth, available);
-    const pageHeight = Math.floor(pageWidth * pageRatio);
-    return { pageWidth, pageHeight };
-  }, [availableWidth, isMobile, pageRatio]);
+    const basePageWidth = Math.min(maxPageWidth, available);
+    const basePageHeight = Math.floor(basePageWidth * pageRatio);
+    
+    return { 
+      pageWidth: Math.floor(basePageWidth * zoom), 
+      pageHeight: Math.floor(basePageHeight * zoom) 
+    };
+  }, [availableWidth, isMobile, pageRatio, zoom]);
 
   const pageNumbers = useMemo(() => {
     const pages = Array.from({ length: pageCount }, (_, i) => i + 1);
@@ -253,18 +330,43 @@ function FlipbookPdf({ src, title, slug }) {
         <div className="flipbook-pdf-controls">
           <button
             type="button"
-            className="flipbook-pdf-btn"
+            className="flipbook-pdf-btn btn-prev"
             onClick={() => flipbookRef.current?.pageFlip()?.flipPrev()}
             disabled={status !== 'ready'}
           >
             Anterior
           </button>
+          
+          <div className="flipbook-pdf-zoom">
+            <button
+                type="button"
+                className="flipbook-pdf-btn icon-only"
+                onClick={() => setZoom(z => Math.max(0.5, z - 0.1))}
+                disabled={status !== 'ready' || zoom <= 0.5}
+                title="Diminuir Zoom"
+            >
+                <ZoomOut size={16} />
+            </button>
+            <span className="zoom-value">{Math.round(zoom * 100)}%</span>
+            <button
+                type="button"
+                className="flipbook-pdf-btn icon-only"
+                onClick={() => setZoom(z => Math.min(2.0, z + 0.1))}
+                disabled={status !== 'ready' || zoom >= 2.0}
+                title="Aumentar Zoom"
+            >
+                <ZoomIn size={16} />
+            </button>
+          </div>
+
           <div className="flipbook-pdf-status">
-            {status === 'loading' ? 'Carregando…' : status === 'error' ? 'Erro ao abrir o PDF' : `Página ${currentPage + 1}`}
+            {status === 'loading' && 'Carregando PDF...'}
+            {status === 'error' && 'Erro ao carregar PDF'}
+            {status === 'ready' && `Página ${currentPage + 1} de ${pageCount}`}
           </div>
           <button
             type="button"
-            className="flipbook-pdf-btn"
+            className="flipbook-pdf-btn btn-next"
             onClick={() => flipbookRef.current?.pageFlip()?.flipNext()}
             disabled={status !== 'ready'}
           >
@@ -273,13 +375,29 @@ function FlipbookPdf({ src, title, slug }) {
         </div>
 
         {status === 'ready' ? (
-          <div className="flipbook-pdf-book-wrap">
+          <div 
+            className="flipbook-pdf-book-wrap" 
+            ref={scrollContainerRef}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseLeave}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <HTMLFlipBook
+              key={`flipbook-${zoom}-${isMobile ? 'mobile' : 'desktop'}`}
               width={pageSize.pageWidth}
               height={pageSize.pageHeight}
               size="fixed"
-              autoSize
+              minWidth={pageSize.pageWidth}
+              maxWidth={pageSize.pageWidth}
+              minHeight={pageSize.pageHeight}
+              maxHeight={pageSize.pageHeight}
+              autoSize={true}
               usePortrait={isMobile}
+              startPage={currentPage}
               drawShadow
               maxShadowOpacity={0.5}
               mobileScrollSupport
