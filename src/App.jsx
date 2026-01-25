@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import NewsBanner from './components/NewsBanner';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import QuemSomos from './pages/QuemSomos';
@@ -33,6 +34,7 @@ function App() {
     <Router>
       <div className="app-container">
         <ScrollToTop />
+        <NewsBanner />
         <Header />
         <main className="main-content">
           <Routes>
