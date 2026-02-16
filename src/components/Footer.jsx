@@ -18,7 +18,7 @@ const Footer = () => {
               className="logo-footer"
               src={logo180}
               srcSet={`${logo180} 180w, ${logo360} 360w`}
-              sizes="180px"
+              sizes="(max-width: 768px) 90px, 180px"
               alt="Logo"
               loading="lazy"
               decoding="async"
