@@ -496,15 +496,18 @@ const Artigo = () => {
         return <a {...props} href={normalizedHref} />;
       },
       img: (props) => {
+        const { loading: imgLoading, decoding: imgDecoding, ...rest } = props || {};
         const normalizedSrc = resolveContentAssetUrl({ slug, reference: props?.src });
         const alt = props?.alt || 'Imagem';
         const className = props?.className ? `${props.className} image-clickable` : 'image-clickable';
         return (
           <img
-            {...props}
+            {...rest}
             src={normalizedSrc}
             alt={alt}
             className={className}
+            loading={imgLoading ?? 'lazy'}
+            decoding={imgDecoding ?? 'async'}
             role="button"
             tabIndex={0}
             onClick={() => openModal(normalizedSrc, alt)}
@@ -575,6 +578,8 @@ const Artigo = () => {
               src={resolveContentAssetUrl({ slug: article.slug, reference: article.imagem })}
               alt={article.titulo}
               className="image-clickable"
+              decoding="async"
+              fetchpriority="high"
               role="button"
               tabIndex={0}
               onClick={() =>
@@ -655,7 +660,7 @@ const Artigo = () => {
               <button className="close-btn" onClick={closeModal} type="button">
                 &times;
               </button>
-              <img src={modalImage.src} alt={modalImage.alt} />
+              <img src={modalImage.src} alt={modalImage.alt} decoding="async" />
               <p className="modal-caption">{modalImage.alt}</p>
             </div>
           </div>

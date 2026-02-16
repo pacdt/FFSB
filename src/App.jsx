@@ -1,24 +1,25 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import NewsBanner from './components/NewsBanner';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import QuemSomos from './pages/QuemSomos';
-import Historico from './pages/Historico';
-import Baluartes from './pages/Baluartes';
-import Acoes from './pages/Acoes';
-import Contato from './pages/Contato';
-import Artigos from './pages/Artigos';
-import Artigo from './pages/Artigo';
-import Liturgia from './pages/Liturgia';
-import Doacoes from './pages/Doacoes';
-import Cronograma from './pages/Cronograma';
-import Localizacao from './pages/Localizacao';
-import Loja from './pages/Loja';
-import RecadoNossaSenhora from './pages/RecadoNossaSenhora';
-import NotFound from './pages/NotFound';
 import './App.css';
+
+const QuemSomos = lazy(() => import('./pages/QuemSomos'));
+const Historico = lazy(() => import('./pages/Historico'));
+const Baluartes = lazy(() => import('./pages/Baluartes'));
+const Acoes = lazy(() => import('./pages/Acoes'));
+const Contato = lazy(() => import('./pages/Contato'));
+const Artigos = lazy(() => import('./pages/Artigos'));
+const Artigo = lazy(() => import('./pages/Artigo'));
+const Liturgia = lazy(() => import('./pages/Liturgia'));
+const Doacoes = lazy(() => import('./pages/Doacoes'));
+const Cronograma = lazy(() => import('./pages/Cronograma'));
+const Localizacao = lazy(() => import('./pages/Localizacao'));
+const Loja = lazy(() => import('./pages/Loja'));
+const RecadoNossaSenhora = lazy(() => import('./pages/RecadoNossaSenhora'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
   const location = useLocation();
@@ -38,23 +39,25 @@ function App() {
         <NewsBanner />
         <Header />
         <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/quem-somos" element={<QuemSomos />} />
-            <Route path="/historico" element={<Historico />} />
-            <Route path="/baluartes" element={<Baluartes />} />
-            <Route path="/acoes" element={<Acoes />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/liturgia" element={<Liturgia />} />
-            <Route path="/doacoes" element={<Doacoes />} />
-            <Route path="/cronograma" element={<Cronograma />} />
-            <Route path="/localizacao" element={<Localizacao />} />
-            <Route path="/loja" element={<Loja />} />
-            <Route path="/recado-nossa-senhora" element={<RecadoNossaSenhora />} />
-            <Route path="/artigos" element={<Artigos />} />
-            <Route path="/artigo/:id" element={<Artigo />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<div className="page-container">Carregando...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/quem-somos" element={<QuemSomos />} />
+              <Route path="/historico" element={<Historico />} />
+              <Route path="/baluartes" element={<Baluartes />} />
+              <Route path="/acoes" element={<Acoes />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/liturgia" element={<Liturgia />} />
+              <Route path="/doacoes" element={<Doacoes />} />
+              <Route path="/cronograma" element={<Cronograma />} />
+              <Route path="/localizacao" element={<Localizacao />} />
+              <Route path="/loja" element={<Loja />} />
+              <Route path="/recado-nossa-senhora" element={<RecadoNossaSenhora />} />
+              <Route path="/artigos" element={<Artigos />} />
+              <Route path="/artigo/:id" element={<Artigo />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>

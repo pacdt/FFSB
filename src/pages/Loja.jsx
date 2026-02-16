@@ -53,6 +53,7 @@ const Loja = () => {
     src,
     alt,
     className: 'image-clickable',
+    decoding: 'async',
     role: 'button',
     tabIndex: 0,
     onClick: () => openModal(src, alt),
@@ -99,7 +100,7 @@ const Loja = () => {
             <button className="close-btn" onClick={closeModal} type="button">
               &times;
             </button>
-            <img src={modalImage.src} alt={modalImage.alt} />
+            <img src={modalImage.src} alt={modalImage.alt} decoding="async" />
             <p className="modal-caption">{modalImage.alt}</p>
           </div>
         </div>

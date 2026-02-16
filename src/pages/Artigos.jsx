@@ -44,7 +44,7 @@ const Artigos = () => {
             <Link to={`/artigo/${article.id}`} key={article.id} className="article-card-link">
               <div className="article-card">
                 <div className="article-img-container">
-                  <img src={resolveArtigoImagemUrl(article)} alt={article.titulo} />
+                  <img src={resolveArtigoImagemUrl(article)} alt={article.titulo} loading="lazy" decoding="async" />
                 </div>
                 <div className="article-content">
                   <h3>{article.titulo}</h3>

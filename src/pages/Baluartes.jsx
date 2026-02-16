@@ -54,10 +54,13 @@ const Baluartes = () => {
     };
   }, [modalImage]);
 
-  const makeImageProps = (src, alt, className) => ({
+  const makeImageProps = (src, alt, className, options = {}) => ({
     src,
     alt,
     className: className ? `${className} image-clickable` : 'image-clickable',
+    loading: options.loading ?? 'lazy',
+    decoding: 'async',
+    fetchpriority: options.fetchPriority,
     role: 'button',
     tabIndex: 0,
     onClick: () => openModal(src, alt),
@@ -70,7 +73,7 @@ const Baluartes = () => {
 
       <section className="intro-card">
         <h2>São Bento, Santa Escolástica e a Virgem Santíssima</h2>
-        <img {...makeImageProps(bannerBaluartes, 'Baluartes', 'intro-img')} />
+        <img {...makeImageProps(bannerBaluartes, 'Baluartes', 'intro-img', { loading: 'eager', fetchPriority: 'high' })} />
       </section>
 
       {/* Seção São Bento */}
@@ -193,7 +196,7 @@ const Baluartes = () => {
             <button className="close-btn" onClick={closeModal} type="button">
               &times;
             </button>
-            <img src={modalImage.src} alt={modalImage.alt} />
+            <img src={modalImage.src} alt={modalImage.alt} decoding="async" />
             <p className="modal-caption">{modalImage.alt}</p>
           </div>
         </div>

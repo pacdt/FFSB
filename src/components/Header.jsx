@@ -20,7 +20,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo-container">
-          <img src={logo} alt="Filhos e Filhas de São Bento" className="logo" />
+          <img src={logo} alt="Filhos e Filhas de São Bento" className="logo" decoding="async" />
         </Link>
 
         <div className="header-divider" />

@@ -59,10 +59,13 @@ const QuemSomos = () => {
     };
   }, [modalImage]);
 
-  const makeImageProps = (src, alt, className) => ({
+  const makeImageProps = (src, alt, className, options = {}) => ({
     src,
     alt,
     className: className ? `${className} image-clickable` : 'image-clickable',
+    loading: options.loading ?? 'lazy',
+    decoding: 'async',
+    fetchpriority: options.fetchPriority,
     role: 'button',
     tabIndex: 0,
     onClick: () => openModal(src, alt),
@@ -74,7 +77,7 @@ const QuemSomos = () => {
       <h1 className="section-title">Quem Somos?</h1>
 
       <section className="intro-section">
-        <img {...makeImageProps(imgMontagem, 'Comunidade FFSB', 'featured-img')} />
+        <img {...makeImageProps(imgMontagem, 'Comunidade FFSB', 'featured-img', { loading: 'eager', fetchPriority: 'high' })} />
         
         <div className="text-content">
           <p>
@@ -227,7 +230,7 @@ const QuemSomos = () => {
             <button className="close-btn" onClick={closeModal} type="button">
               &times;
             </button>
-            <img src={modalImage.src} alt={modalImage.alt} />
+            <img src={modalImage.src} alt={modalImage.alt} decoding="async" />
             <p className="modal-caption">{modalImage.alt}</p>
           </div>
         </div>

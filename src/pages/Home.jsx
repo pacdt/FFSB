@@ -41,7 +41,13 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero-banner">
-        <img src={bannerHero} alt="Filhos e Filhas de São Bento" className="banner-img" />
+        <img
+          src={bannerHero}
+          alt="Filhos e Filhas de São Bento"
+          className="banner-img"
+          decoding="async"
+          fetchpriority="high"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <h2 className="hero-title">Filhos e Filhas de São Bento do Coração Eucarístico de Jesus</h2>
       </section>
@@ -99,7 +105,7 @@ const Home = () => {
             <Link to={`/artigo/${article.id}`} key={article.id} className="article-card-link">
               <div className="article-card">
                 <div className="article-img-container">
-                  <img src={resolveArtigoImagemUrl(article)} alt={article.titulo} />
+                  <img src={resolveArtigoImagemUrl(article)} alt={article.titulo} loading="lazy" decoding="async" />
                 </div>
                 <div className="article-content">
                   <h3>{article.titulo}</h3>

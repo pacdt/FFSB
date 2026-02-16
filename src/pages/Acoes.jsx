@@ -95,7 +95,7 @@ const Acoes = () => {
         
         <div className="text-image-split">
             <div className="image-side">
-                <img src={imgAcaoPrincipal} alt="Ação Evangelizadora" className="main-img" />
+                <img src={imgAcaoPrincipal} alt="Ação Evangelizadora" className="main-img" decoding="async" />
             </div>
             <div className="text-side">
                 <p>
@@ -142,7 +142,7 @@ const Acoes = () => {
                   onClick={() => openModal(index)}
                   aria-label={`Abrir imagem: ${img.alt}`}
                 >
-                  <img src={img.src} alt={img.alt} loading="lazy" />
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
                   <div className="overlay">
                     <span>Ver mais</span>
                   </div>
@@ -168,7 +168,7 @@ const Acoes = () => {
               ›
             </button>
 
-            <img src={selectedImage.src} alt={selectedImage.alt} />
+            <img src={selectedImage.src} alt={selectedImage.alt} decoding="async" />
             <p className="modal-caption">{selectedImage.alt}</p>
           </div>
         </div>

@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="footer-inner">
         <div className="footer-infos">
           <div className="logo-footer-wrap">
-            <img className="logo-footer" src={logo} alt="Logo" />
+            <img className="logo-footer" src={logo} alt="Logo" loading="lazy" decoding="async" />
           </div>
           <div className="footer-text">
             <h4>Filhos e Filhas de São Bento do Coração Eucarístico de Jesus</h4>
@@ -30,7 +30,7 @@ const Footer = () => {
             <br />
             <h5>Entre em Contato via WhatsApp</h5>
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="whatsapp-link">
-              <img className="whatsapp-logo" src={whatsappLogo} alt="WhatsApp Logo" />
+              <img className="whatsapp-logo" src={whatsappLogo} alt="WhatsApp Logo" loading="lazy" decoding="async" />
             </a>
           </div>
         </div>
