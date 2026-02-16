@@ -16,6 +16,7 @@ import Doacoes from './pages/Doacoes';
 import Cronograma from './pages/Cronograma';
 import Localizacao from './pages/Localizacao';
 import Loja from './pages/Loja';
+import RecadoNossaSenhora from './pages/RecadoNossaSenhora';
 import NotFound from './pages/NotFound';
 import './App.css';
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/cronograma" element={<Cronograma />} />
             <Route path="/localizacao" element={<Localizacao />} />
             <Route path="/loja" element={<Loja />} />
+            <Route path="/recado-nossa-senhora" element={<RecadoNossaSenhora />} />
             <Route path="/artigos" element={<Artigos />} />
             <Route path="/artigo/:id" element={<Artigo />} />
             <Route path="*" element={<NotFound />} />

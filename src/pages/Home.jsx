@@ -114,6 +114,21 @@ const Home = () => {
           Outros artigos
         </Link>
       </section>
+
+      <section className="recado-nossa-senhora">
+        <h2>Recado de Nossa Senhora</h2>
+
+        <Link to="/recado-nossa-senhora" className="recado-home-card-link">
+          <div className="recado-home-card">
+            <div className="recado-home-card-overlay" aria-hidden="true" />
+            <div className="recado-home-card-content">
+              <h3>Recado de Nossa Senhora</h3>
+              <p>Clique para receber uma mensagem.</p>
+              <span className="recado-home-card-cta">Ver recado</span>
+            </div>
+          </div>
+        </Link>
+      </section>
     </div>
   );
 };

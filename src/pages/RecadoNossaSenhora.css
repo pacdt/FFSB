@@ -1,0 +1,118 @@
+.recado-page {
+  padding-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.recado-hero {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  background: #000 url('/assets/img/recado.png') center / cover no-repeat;
+  height: min(420px, 48vh);
+}
+
+.recado-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.78) 100%);
+}
+
+.recado-hero-title {
+  position: absolute;
+  left: 50%;
+  bottom: 1.35rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: #fff;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.recado-body {
+  /* max-width: 980px; */
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.recado-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.recado-text {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #373d55;
+  text-align: center;
+  max-width: 820px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.recado-placeholder {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: center;
+  max-width: 820px;
+}
+
+.recado-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.15rem;
+  border-radius: 12px;
+  border: none;
+  background: #373d55;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.recado-btn:hover {
+  background: #2a2f45;
+}
+
+.recado-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .recado-hero {
+    border-radius: 0;
+  }
+
+  .recado-body {
+    padding: 0 1rem;
+  }
+
+  .recado-card {
+    padding: 1.6rem 1.25rem 1.4rem;
+    border-radius: 12px;
+  }
+
+  .recado-text {
+    font-size: 1.05rem;
+  }
+}

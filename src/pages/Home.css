@@ -68,7 +68,7 @@
   text-align: center;
 }
 
-.quick-access h2, .latest-articles h2 {
+.quick-access h2, .latest-articles h2, .recado-nossa-senhora h2 {
   font-family: 'Libre Baskerville', serif;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -77,7 +77,7 @@
   display: inline-block;
 }
 
-.quick-access h2::after, .latest-articles h2::after {
+.quick-access h2::after, .latest-articles h2::after, .recado-nossa-senhora h2::after {
   content: '';
   position: absolute;
   width: 60%;
@@ -230,6 +230,85 @@
   margin-top: 2rem;
 }
 
+.recado-nossa-senhora {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.recado-home-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.recado-home-card {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  background: #000 url('/assets/img/recado.png') center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.recado-home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.recado-home-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.recado-home-card-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 1.25rem 1.25rem 1.4rem;
+  text-align: left;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.recado-home-card-content h3 {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.45rem;
+  color: #fff;
+}
+
+.recado-home-card-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+}
+
+.recado-home-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: fit-content;
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+  background: rgba(243, 228, 197, 0.92);
+  color: #373d55;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
 @media (max-width: 768px) {
   .home {
     gap: 3rem;
@@ -259,5 +338,22 @@
 @media (max-width: 480px) {
   .access-grid {
     grid-template-columns: 1fr;
+  }
+
+  .recado-nossa-senhora {
+    padding: 0 1rem;
+  }
+
+  .recado-home-card {
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  .recado-home-card-content {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .recado-home-card-content h3 {
+    font-size: 1.25rem;
   }
 }

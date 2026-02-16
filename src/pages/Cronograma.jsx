@@ -16,7 +16,7 @@ const Cronograma = () => {
             <CalendarDays size={22} />
             <h2>Próximo Evento</h2>
           </div>
-          <p className="cronograma-muted">Sem eventos no momento...</p>
+          <p className="cronograma-muted">Retiro de Carnaval para Rapazes, de 14/02 à 17/02 de 2026 com Missas às 11h aberta à cominudade.</p>
         </div>
 
         <div className="cronograma-card">
