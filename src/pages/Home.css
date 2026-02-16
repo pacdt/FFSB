@@ -18,6 +18,11 @@
   background: #000;
 }
 
+.hero-banner picture {
+  width: 100%;
+  display: block;
+}
+
 .banner-img {
   width: 100%;
   height: min(560px, 70vh);
@@ -251,7 +256,17 @@
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  background: #000 url('/assets/img/recado.png') center / cover no-repeat;
+  background-color: #000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: image-set(
+    url('/assets/img/recado-800.avif') type('image/avif') 1x,
+    url('/assets/img/recado-1600.avif') type('image/avif') 2x,
+    url('/assets/img/recado-800.webp') type('image/webp') 1x,
+    url('/assets/img/recado-1600.webp') type('image/webp') 2x,
+    url('/assets/img/recado.png') 1x
+  );
   display: flex;
   align-items: flex-end;
   transition: transform 0.25s ease, box-shadow 0.25s ease;

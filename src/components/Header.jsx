@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo180 from '../assets/logo-180.webp';
+import logo360 from '../assets/logo-360.webp';
 import './Header.css';
 
 const Header = () => {
@@ -20,7 +21,14 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo-container">
-          <img src={logo} alt="Filhos e Filhas de São Bento" className="logo" decoding="async" />
+          <img
+            src={logo180}
+            srcSet={`${logo180} 180w, ${logo360} 360w`}
+            sizes="180px"
+            alt="Filhos e Filhas de São Bento"
+            className="logo"
+            decoding="async"
+          />
         </Link>
 
         <div className="header-divider" />

@@ -1,7 +1,9 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../assets/logo.png';
-import whatsappLogo from '../assets/whatsapp.png';
+import logo180 from '../assets/logo-180.webp';
+import logo360 from '../assets/logo-360.webp';
+import whatsapp52 from '../assets/whatsapp-52.webp';
+import whatsapp104 from '../assets/whatsapp-104.webp';
 
 const Footer = () => {
   const whatsappHref =
@@ -12,7 +14,15 @@ const Footer = () => {
       <div className="footer-inner">
         <div className="footer-infos">
           <div className="logo-footer-wrap">
-            <img className="logo-footer" src={logo} alt="Logo" loading="lazy" decoding="async" />
+            <img
+              className="logo-footer"
+              src={logo180}
+              srcSet={`${logo180} 180w, ${logo360} 360w`}
+              sizes="180px"
+              alt="Logo"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="footer-text">
             <h4>Filhos e Filhas de São Bento do Coração Eucarístico de Jesus</h4>
@@ -30,7 +40,15 @@ const Footer = () => {
             <br />
             <h5>Entre em Contato via WhatsApp</h5>
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="whatsapp-link">
-              <img className="whatsapp-logo" src={whatsappLogo} alt="WhatsApp Logo" loading="lazy" decoding="async" />
+              <img
+                className="whatsapp-logo"
+                src={whatsapp52}
+                srcSet={`${whatsapp52} 52w, ${whatsapp104} 104w`}
+                sizes="52px"
+                alt="WhatsApp Logo"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
           </div>
         </div>

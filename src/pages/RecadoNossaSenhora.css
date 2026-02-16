@@ -11,7 +11,17 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
-  background: #000 url('/assets/img/recado.png') center / cover no-repeat;
+  background-color: #000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: image-set(
+    url('/assets/img/recado-800.avif') type('image/avif') 1x,
+    url('/assets/img/recado-1600.avif') type('image/avif') 2x,
+    url('/assets/img/recado-800.webp') type('image/webp') 1x,
+    url('/assets/img/recado-1600.webp') type('image/webp') 2x,
+    url('/assets/img/recado.png') 1x
+  );
   height: min(420px, 48vh);
 }
 

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import bannerHero from '../assets/img/banner-hero.png';
+import bannerHero768Avif from '../assets/img/banner-hero-768.avif';
+import bannerHero1280Avif from '../assets/img/banner-hero-1280.avif';
+import bannerHero1920Avif from '../assets/img/banner-hero-1920.avif';
+import bannerHero768Webp from '../assets/img/banner-hero-768.webp';
+import bannerHero1280Webp from '../assets/img/banner-hero-1280.webp';
+import bannerHero1920Webp from '../assets/img/banner-hero-1920.webp';
 import { Link } from 'react-router-dom';
 import { BookOpen, MapPin, Heart, ShoppingBag, CalendarDays } from 'lucide-react';
 
@@ -41,13 +47,26 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero-banner">
-        <img
-          src={bannerHero}
-          alt="Filhos e Filhas de São Bento"
-          className="banner-img"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={`${bannerHero768Avif} 768w, ${bannerHero1280Avif} 1280w, ${bannerHero1920Avif} 1920w`}
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcSet={`${bannerHero768Webp} 768w, ${bannerHero1280Webp} 1280w, ${bannerHero1920Webp} 1920w`}
+            sizes="100vw"
+          />
+          <img
+            src={bannerHero}
+            alt="Filhos e Filhas de São Bento"
+            className="banner-img"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
         <div className="hero-overlay" aria-hidden="true" />
         <h2 className="hero-title">Filhos e Filhas de São Bento do Coração Eucarístico de Jesus</h2>
       </section>
