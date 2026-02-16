@@ -61,31 +61,37 @@ const RecadoNossaSenhora = () => {
     return recadoAtual;
   }, [recadoAtual, status]);
 
+  const hasRecado = Boolean(textoExibido);
+
   return (
     <div className="page-container recado-page">
       <section className="recado-hero">
         <div className="recado-hero-overlay" aria-hidden="true" />
-        <h1 className="recado-hero-title">Recado de Nossa Senhora</h1>
+        <h1 className="recado-hero-title">Um Recado de Nossa Senhora Para Você!</h1>
       </section>
 
       <section className="recado-body">
-        <div className="recado-card">
-          {textoExibido ? (
-            <p className="recado-text">"{textoExibido}"</p>
+        <div className={`recado-card${hasRecado ? ' has-recado' : ''}`}>
+          {hasRecado ? (
+            <p className="recado-text recado-text-full">"{textoExibido}"</p>
           ) : (
-            <p className="recado-placeholder">
-              Clique no botão para receber um recado.
-            </p>
-          )}
+            <>
+              <p className="recado-placeholder">
+                {status === 'loading'
+                  ? 'Carregando recados...'
+                  : 'Clique no botão para ver um recado.'}
+              </p>
 
-          <button
-            type="button"
-            className="recado-btn"
-            onClick={pickRandom}
-            disabled={!canPick}
-          >
-            Receber um recado
-          </button>
+              <button
+                type="button"
+                className="recado-btn"
+                onClick={pickRandom}
+                disabled={!canPick}
+              >
+                Ver recado
+              </button>
+            </>
+          )}
         </div>
       </section>
     </div>

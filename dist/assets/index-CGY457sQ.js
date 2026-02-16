@@ -1,4 +1,4 @@
-import{u as r,j as s}from"./index-CmNKqBYz.js";function o(a){const e={br:"br",em:"em",p:"p",strong:"strong",...r(),...a.components};return s.jsxs(s.Fragment,{children:[s.jsxs(e.p,{children:[s.jsx(e.strong,{children:"O que é a escravidão à Santíssima Virgem?"}),s.jsx(e.br,{}),`
+import{u as r,j as s}from"./index-DH2BYBXb.js";function o(a){const e={br:"br",em:"em",p:"p",strong:"strong",...r(),...a.components};return s.jsxs(s.Fragment,{children:[s.jsxs(e.p,{children:[s.jsx(e.strong,{children:"O que é a escravidão à Santíssima Virgem?"}),s.jsx(e.br,{}),`
 `,"É consagrar-se inteiramente a Ela para ser todo de Jesus.",s.jsx(e.br,{}),`
 `,"É entregar todo nosso ser, nossa vida nossa alma a Jesus Cristo através de Maria, com Maria em Maria como escravos de amor.",s.jsx(e.br,{}),`
 `,"É amar profundamente a Virgem Santíssima e assim também amar Jesus."]}),`

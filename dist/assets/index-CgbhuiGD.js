@@ -1,4 +1,4 @@
-import{u as o,j as e}from"./index-CmNKqBYz.js";function n(s){const a={br:"br",p:"p",strong:"strong",...o(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(a.p,{children:"A medalha de São Bento é um objeto Sagrado examinado e aprovado pela Santa Madre Igreja e que reúne a virtude triunfante da santa Cruz que nos salvou, esta é uma das recordações de São Bento. A medalha traz uma oração escrita em latim, que é um pequeno exorcismo de São Bento:"}),`
+import{u as o,j as e}from"./index-DH2BYBXb.js";function n(s){const a={br:"br",p:"p",strong:"strong",...o(),...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(a.p,{children:"A medalha de São Bento é um objeto Sagrado examinado e aprovado pela Santa Madre Igreja e que reúne a virtude triunfante da santa Cruz que nos salvou, esta é uma das recordações de São Bento. A medalha traz uma oração escrita em latim, que é um pequeno exorcismo de São Bento:"}),`
 `,e.jsxs(a.p,{children:["Crux sacra sit mihi lux",e.jsx(a.br,{}),`
 `,"Non draco sit mihi dux",e.jsx(a.br,{}),`
 `,"Vade retro sátana",e.jsx(a.br,{}),`
