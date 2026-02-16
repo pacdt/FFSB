@@ -24,7 +24,7 @@ const Header = () => {
           <img
             src={logo180}
             srcSet={`${logo180} 180w, ${logo360} 360w`}
-            sizes="(max-width: 854px) 150px, 180px"
+            sizes="(max-width: 854px) 60px, 180px"
             alt="Filhos e Filhas de São Bento"
             className="logo"
             decoding="async"
